@@ -1,15 +1,30 @@
-// spread operator
+// Destructuring
 
-// const arr1 = [1, 2, 3];
-// const arr2 = [...arr1, 4, 5];
+const userData = {
+    name: "Mamad",
+    age: "24",
+    address: {
+        city: "Ahvaz",
+        street: "Kianpars"
+    }
+};
 
-// arr2.push(8);
+// const name = userData['name']
+// const name = userData.name
+// const age = userData.age
+// const address = userData.address
 
-// console.log(arr1)
-// console.log(arr2)
+// console.log(name)
+// console.log(age)
+// console.log(address)
 
-const obj1 = {name: "Mamad"}
-const obj2 = {...obj1,family: "Taheri"}
+// const {name, age, address} = userData;
+// const {city, street} = address
 
-console.log(obj1)
-console.log(obj2)
+const {name, age, address: {city, street}} = userData;
+
+
+console.log(name)
+console.log(age)
+console.log(city)
+console.log(street)
