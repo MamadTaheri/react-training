@@ -1,15 +1,7 @@
-// Arrow Function
+// map function
 
-// const sum = function(number) {
-//     return number + 2;
-// }
+const numbers = [1,2,3,4];
 
-// console.log(sum(5));
+const newNumbers = numbers.map((item) => item * 2)
 
-// const sum = number => number + 2
-
-const sum = (number, number2) => {
-    return (number * number2)
-}
-
-console.log(sum(5, 3))
+console.log(newNumbers)
