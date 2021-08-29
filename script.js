@@ -1,10 +1,18 @@
-// modular import && export
+// Classess
 
-import sum, { name, sayHi } from "./app.js"
-// import sum from './app.js'
+class Vehicle {
+    constructor(color,model){
+        this.color = color,
+        this.model = model
+    }
 
+    speed() {
+        console.log("I go fast")
+    }
+}
 
-sayHi()
-console.log(name)
+const car1 = new Vehicle("red","Ferrari");
+console.log(car1)
 
-console.log(sum(2,3));
+const car2 = new Vehicle("white","BMX");
+console.log(car2)
