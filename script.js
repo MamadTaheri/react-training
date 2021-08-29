@@ -1,7 +1,10 @@
-// map function
+// modular import && export
 
-const numbers = [1,2,3,4];
+import sum, { name, sayHi } from "./app.js"
+// import sum from './app.js'
 
-const newNumbers = numbers.map((item) => item * 2)
 
-console.log(newNumbers)
+sayHi()
+console.log(name)
+
+console.log(sum(2,3));
