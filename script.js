@@ -1,22 +1,15 @@
-// primitive type: string - number - boolean - null - undifined - symbol
+// spread operator
 
-//refrence type: object - array
+// const arr1 = [1, 2, 3];
+// const arr2 = [...arr1, 4, 5];
 
-// let number = 5;
-// let number2 = number;
-// number2 = 325;
+// arr2.push(8);
 
-// console.log(number)
-// console.log(number2)
+// console.log(arr1)
+// console.log(arr2)
 
-let array1 = [1,2,3];
-let array2 = array1;
-array2.push(4);
+const obj1 = {name: "Mamad"}
+const obj2 = {...obj1,family: "Taheri"}
 
-console.log(array1)
-console.log(array2)
-
-let object1 = {name: "milad"};
-let object2 = {name: "milad"};
-
-console.log(object1 === object2)
+console.log(obj1)
+console.log(obj2)
