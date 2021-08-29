@@ -1,56 +1,22 @@
-// var i = 5;
-// console.log(i);
+// primitive type: string - number - boolean - null - undifined - symbol
 
-// var i = 6;
-// console.log(i);
+//refrence type: object - array
 
-// let i = 5;
-// console.log(i);
+// let number = 5;
+// let number2 = number;
+// number2 = 325;
 
-// let i = 6;
-// console.log(i);
+// console.log(number)
+// console.log(number2)
 
-// const i = 5;
-// console.log(i);
+let array1 = [1,2,3];
+let array2 = array1;
+array2.push(4);
 
-// const i = 6;
-// console.log(i);
+console.log(array1)
+console.log(array2)
 
-// if(true) {
-//     var i = 5;
-//     console.log(i)
-// }
+let object1 = {name: "milad"};
+let object2 = {name: "milad"};
 
-// console.log(i)
-
-// if(true) {
-//     let i = 5;
-//     console.log(i)
-// }
-
-// console.log(i)
-
-// if(true) {
-//     const i = 5;
-//     console.log(i)
-// }
-
-// console.log(i)
-
-// let i = 5;
-// console.log(i);
-
-// i=6;
-// console.log(i)
-
-// const i = 5;
-// console.log(i);
-
-// i=6;
-// console.log(i)
-
-const i = [1, 2, 3];
-console.log(i);
-
-i.push(4);
-console.log(i) 
+console.log(object1 === object2)
