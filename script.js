@@ -1,4 +1,4 @@
-// Classess
+// Inheritence
 
 class Vehicle {
     constructor(color,model){
@@ -6,13 +6,24 @@ class Vehicle {
         this.model = model
     }
 
-    speed() {
-        console.log("I go fast")
+    go() {
+        console.log("I go")
     }
 }
 
-const car1 = new Vehicle("red","Ferrari");
-console.log(car1)
+class Car extends Vehicle {
+    constructor(color,model,speed){
+        super(color,model);
+        this.speed = speed
+    }
 
-const car2 = new Vehicle("white","BMX");
-console.log(car2)
+    speed() {
+        console.log("I go fast!")
+    }
+}
+
+const vahicle = new Vehicle("red","Ferrari");
+console.log(vahicle)
+
+const car = new Car("red", "Ferrari", 190);
+console.log(car)
