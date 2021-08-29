@@ -1,30 +1,15 @@
-// Destructuring
+// Arrow Function
 
-const userData = {
-    name: "Mamad",
-    age: "24",
-    address: {
-        city: "Ahvaz",
-        street: "Kianpars"
-    }
-};
+// const sum = function(number) {
+//     return number + 2;
+// }
 
-// const name = userData['name']
-// const name = userData.name
-// const age = userData.age
-// const address = userData.address
+// console.log(sum(5));
 
-// console.log(name)
-// console.log(age)
-// console.log(address)
+// const sum = number => number + 2
 
-// const {name, age, address} = userData;
-// const {city, street} = address
+const sum = (number, number2) => {
+    return (number * number2)
+}
 
-const {name, age, address: {city, street}} = userData;
-
-
-console.log(name)
-console.log(age)
-console.log(city)
-console.log(street)
+console.log(sum(5, 3))
