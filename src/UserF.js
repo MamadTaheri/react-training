@@ -1,20 +1,17 @@
 import React from 'react';
 
-// const UserF = (props) => {
-//     const {name, age} = props
-//     return (
-//         <div>
-//             <p>Hi. I am {name} and I am {age} years old</p>
-//         </div>
-//     );
-// };
+import "./UserF.css"
 
-const UserF = ({name, age}) => {
+const UserF = (props) => {
+    const {name, age} = props
+    const header = {color:"green", fontSize:"2rem", border:"1px solid green"};
     return (
         <div>
-            <p>Hi. I am {name} and I am {age} years old</p>
+            <p style={header}>Hi. I am {name} and I am {age} years old</p>
+            <p className="paragraph">Hi. I am {name} and I am {age} years old</p>
         </div>
     );
 };
+ 
 
 export default UserF;
