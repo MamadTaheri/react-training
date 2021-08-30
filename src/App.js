@@ -1,17 +1,21 @@
 import React, { Component } from "react";
+import Car from "./Car";
 
 class App extends Component {
     number = 10;
   render() {
     return (
-      <>
-        <p>Multiple: 4*5 </p>
-        <p>Multiple: {4 * 5} </p>
-        <p>Multiple:  Math.ceil(Math.random()*1000)  </p>
-        <p>Multiple:  {Math.ceil(Math.random()*1000)}  </p>
-        <p>{this.number} </p>
-        {console.log(this.number)}
-      </>
+      <div>
+         <h1>
+             My cars:
+         </h1>
+         <Car model="BMW" color="Red" />
+         <Car model="Benz" color="Black" />
+         <Car model="Buggati" color="Blue" >I am Super Car</Car>
+         {/* <Car model="" color="" /> */}
+         {/* <Car model="" color="" /> */}
+         {/* <Car model="" color="" /> */}
+      </div>
     );
   }
 }
