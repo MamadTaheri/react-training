@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-import ClassEvent from './ClassEvent'
-import FunctionEvent from './FunctionEvent'
 
-export default class  extends Component {
+import ClassEvent from './ClassEvent'
+// import FunctionEvent from './FunctionEvent'
+
+class App extends Component {
   render() {
     return (
       <div>
         <ClassEvent />
-        <br></br>
         {/* <FunctionEvent /> */}
       </div>
     )
   }
 }
+
+export default App
