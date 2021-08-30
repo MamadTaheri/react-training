@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-const Child = (props) => {
-    console.log("Child is renderedd")
-    return (
-        <div>
-            {props.text} Child
-        </div>
-    );
-};
+class Child extends Component {
 
-export default React.memo(Child);
+    constructor(props){
+        super(props);
+        this.input = React.createRef();
+    }
+
+    showRef = () => {
+        console.log(this.input.current.value)
+    }
+
+    componentDidMount() {
+        this.input.current.focus()
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.showRef}>Show</button>
+                <input ref={this.input} type="text"/>
+            </div>
+        )
+    }
+}
+
+export default Child
