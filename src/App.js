@@ -8,7 +8,7 @@ export default class  extends Component {
       <div>
         <ClassEvent />
         <br></br>
-        <FunctionEvent />
+        {/* <FunctionEvent /> */}
       </div>
     )
   }
