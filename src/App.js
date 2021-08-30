@@ -1,26 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+import ClassEvent from './ClassEvent'
+import FunctionEvent from './FunctionEvent'
 
-import UserC from "./UserC";
-import UserF from "./UserF";
-import "./App.css"
-import styles from "./App.module.css"
-
-class App extends Component {  
-
-    header = {color:"blue", fontSize:"2rem", border:"1px solid blue"};
-  
+export default class  extends Component {
   render() {
     return (
       <div>
-          {/* <h1 style={{color:"red", fontSize:"2rem", border:"1px solid red"}}>Mohammad</h1> */}
-          {/* <h1 style={this.header}>Mohammad</h1> */}
-          <h1 className="header">Mohammad</h1>
-          <h1 className={styles.header}>Mohammad</h1>
-          {/* <UserC LastName ="Taheri" career="Programmer" /> */}
-          {/* <UserF name="Milad" age="24"/> */}
+        <ClassEvent />
+        <br></br>
+        <FunctionEvent />
       </div>
-    );
+    )
   }
 }
-
-export default App;
