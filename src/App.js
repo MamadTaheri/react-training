@@ -1,20 +1,32 @@
 import React, { Component } from "react";
-import Car from "./Car";
 
 class App extends Component {
-    number = 10;
+  constructor() {
+    super();
+    this.state = {
+      name: "Benz",
+      speed: 250,
+    };
+  }
+
+  changeHandler = () => {
+      const carName = this.state.name == "Benz" ? "BMW" : "Benz"
+      const carSpeed = this.state.speed == 250 ? 300 : 250
+      this.setState({
+          name: carName,
+          speed: carSpeed
+      })
+  }
+
   render() {
     return (
       <div>
-         <h1>
-             My cars:
-         </h1>
-         <Car model="BMW" color="Red" />
-         <Car model="Benz" color="Black" />
-         <Car model="Buggati" color="Blue" >I am Super Car</Car>
-         {/* <Car model="" color="" /> */}
-         {/* <Car model="" color="" /> */}
-         {/* <Car model="" color="" /> */}
+        <h1>My cars:</h1>
+        <p>
+          My first car is {this.state.name} and it's top speed is{" "}
+          {this.state.speed}
+        </p>
+        <button onClick={this.changeHandler}>Change</button>
       </div>
     );
   }
