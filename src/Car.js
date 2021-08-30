@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Car extends Component {
-  render() {
-    return (
-      <>
-        <p>
-          The model of car is {this.props.model} and it's color is
-          {this.props.color}
-        </p>
-        {this.props.children ? <span>{this.props.children}</span> : <h5>Not</h5>}
-      </>
-    );
-  }
-}
+const Car = (props) => {
+  return (
+    <>
+      <p>
+        The model of car is {props.model} and it's color is
+        {props.color}
+      </p>
+      {props.children ? <span>{props.children}</span> : <h5>Not</h5>}
+    </>
+  );
+};
 
 export default Car;
