@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
 import Child from './Child';
 
-class App extends PureComponent {
+class App extends Component {
  
   constructor(props) {
     super(props);

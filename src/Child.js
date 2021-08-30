@@ -1,14 +1,12 @@
-import React, { PureComponent } from 'react'
+import React from 'react';
 
-class Child extends PureComponent {
-    render() {
-        console.log("Child is rendered")
-        return (
-            <div>
-                Chils {this.props.text}
-            </div>
-        )
-    }
-}
+const Child = (props) => {
+    console.log("Child is renderedd")
+    return (
+        <div>
+            {props.text} Child
+        </div>
+    );
+};
 
-export default Child
+export default React.memo(Child);
