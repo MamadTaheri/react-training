@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import UserC from "./UserC";
 import UserF from "./UserF";
 import "./App.css"
+import styles from "./App.module.css"
 
 class App extends Component {  
 
@@ -11,11 +12,12 @@ class App extends Component {
   render() {
     return (
       <div>
-          <h1 style={{color:"red", fontSize:"2rem", border:"1px solid red"}}>Mohammad</h1>
-          <h1 style={this.header}>Mohammad</h1>
+          {/* <h1 style={{color:"red", fontSize:"2rem", border:"1px solid red"}}>Mohammad</h1> */}
+          {/* <h1 style={this.header}>Mohammad</h1> */}
           <h1 className="header">Mohammad</h1>
-          <UserC LastName ="Taheri" career="Programmer" />
-          <UserF name="Milad" age="24"/>
+          <h1 className={styles.header}>Mohammad</h1>
+          {/* <UserC LastName ="Taheri" career="Programmer" /> */}
+          {/* <UserF name="Milad" age="24"/> */}
       </div>
     );
   }
