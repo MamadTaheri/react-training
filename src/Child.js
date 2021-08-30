@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react'
 
-const Child = () => {
-  return ReactDOM.createPortal(
-    <div>
-      <h1>Mamad</h1>
-    </div>,
-    document.getElementById("child-root")
-  );
-};
+export default class Child extends Component {
 
-export default Child;
+    render() {
+        const{clickHandler,number} = this.props
+        return (
+            <div>
+                <button onClick={clickHandler}>Plus one</button>
+                <h3>Number of products are {number}</h3>
+            </div>
+        )
+    }
+}
