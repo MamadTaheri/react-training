@@ -1,28 +1,34 @@
 import React, { Component } from "react";
 
-import Child from "./Child";
-import NewChild from "./NewChild";
-
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
-      number: 0,
-    };
+      postData: []
+    } 
   }
 
-  clickHandler = () => {
-    this.setState((prevState) => ({
-      number: prevState.number + 1,
-    }));
+  getPost = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   };
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(response => response.json())
+      .then(json => this.setState({
+        postData: json
+      }));
+  }
 
   render() {
     return (
       <div>
-        <Child clickHandler={this.clickHandler} number={this.state.number} />
-        <NewChild number={this.state.number} />
+        <button onClick={this.getPost}>get post</button>
+        <h1>Posts: </h1>
+        {this.state.postData.map(post => <p key={post.id}>{post.id} {' => '} {post.title}</p>)}
       </div>
     );
   }
