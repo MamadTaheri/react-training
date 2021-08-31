@@ -1,10 +1,13 @@
-import React from 'react';
-import Data from './components/Data';
+import React, { useState } from 'react';
+import CompA from './components/CompA';
 
 const App = () => {
+
+  const [name, setName] = useState("Milad")
+
   return (
     <div>
-      <Data />
+      <CompA name={name} />
     </div>
   );
 };
