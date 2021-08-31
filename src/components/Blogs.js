@@ -5,6 +5,7 @@ class Blogs extends Component {
         return (
             <div>
                 <h1>Blogs</h1>
+                <p>Thw auther is : {this.props.match.params.author}</p>
             </div>
         );
     }

@@ -9,7 +9,7 @@ class Navbar extends Component {
             <div>
                 <ul className={classes.ul}>
                     <li><Link to ="/">HomePage</Link></li>
-                    <li><Link to ="/blogs">Blogs</Link></li>
+                    <li><Link to ="/blogs/milad">Blogs</Link></li>
                     <li><Link to ="/products">Products</Link></li>
                     <li><Link to ="/aboutus">About Us</Link></li>
                 </ul>

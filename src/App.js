@@ -6,6 +6,7 @@ import Blogs from './components/Blogs';
 import Products from './components/Products';
 import AboutUS from './components/AboutUs';
 import Navbar from './components/Navbar';
+import Product from './components/Product';
 
 import classes from './App.module.css'
 
@@ -19,7 +20,8 @@ class App extends Component {
 
         <div>
           <Switch>
-              <Route path="/blogs" render={(props) => <Blogs name="Milad" {...props} />} />
+              <Route path="/products/:id" component={Product} />
+              <Route path="/blogs/:author?" render={(props) => <Blogs name="Milad" {...props} />} />
               <Route path="/products" component={Products} />
               <Route path="/aboutus" component={AboutUS} />
               <Route path="/" component={HomePage} />
