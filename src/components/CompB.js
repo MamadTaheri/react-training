@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CompC from './CompC';
 
-const CompB = (props) => {
+import { NameContext } from '../App';
+
+const CompB = () => {
+
+
+    const name = useContext(NameContext)
+
     return (
         <div>
-            <CompC name={props.name} />
+            {name}
+            <CompC />
             
         </div>
     );

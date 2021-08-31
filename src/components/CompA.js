@@ -1,11 +1,11 @@
 import React, { useState } from 'react'; 
 import CompB from './CompB';
 
-const CompA = (props) => { 
+const CompA = () => { 
 
     return (
         <div>
-            <CompB name={props.name} />
+            <CompB />
         </div>
     );
 };

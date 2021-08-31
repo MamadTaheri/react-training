@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const CompC = (props) => {
+import { NameContext, AgeContext } from '../App';
+
+const CompC = () => {
+
+    const name = useContext(NameContext)
+    const age = useContext(AgeContext)
+
     return (
         <div>
-            <h1>Component C {props.name}</h1>
+            <h1>Component C {name} - Age = {age}</h1>
         </div>
     );
 };
