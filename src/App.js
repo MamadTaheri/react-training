@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './components/HomePage';
 import Blogs from './components/Blogs';
 import Products from './components/Products';
 import AboutUS from './components/AboutUs';
+import Navbar from './components/Navbar';
+
+import classes from './App.module.css'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li><a href ="/">HomePage</a></li>
-          <li><a href ="/blogs">Blogs</a></li>
-          <li><a href ="/products">Products</a></li>
-          <li><a href ="/aboutus">About Us</a></li>
-        </ul>
+       <div className={classes.topbar}>
+          <Navbar />
+       </div>
 
         <div>
-           <Route path="/" component={HomePage} />
-           <Route path="/blogs" component={Blogs} />
-           <Route path="/products" component={Products} />
-           <Route path="/aboutus" component={AboutUS} />
+          <Switch>
+              <Route path="/blogs" component={Blogs} />
+              <Route path="/products" component={Products} />
+              <Route path="/aboutus" component={AboutUS} />
+              <Route path="/" component={HomePage} />
+           </Switch>
         </div>
       </div>
     )
