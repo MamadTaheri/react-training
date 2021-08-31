@@ -8,6 +8,10 @@ const Logger = () => {
 
     useEffect(() => {
         console.log(number)
+
+        return () => {
+            console.log("logger cpomppneni is removerd from dpm")
+        }
     }, [])
 
     return (

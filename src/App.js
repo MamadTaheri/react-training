@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Logger from './components/Logger';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Logger />
-      </div>
-    );
-  }
-}
+const App = () => {
+
+  const [isShown, setIsShown] = useState(true)
+
+  return (
+    <div>
+      <button onClick={() => setIsShown(false) }>Delete</button>
+      {isShown && <Logger />}
+    </div>
+  );
+};
 
 export default App;
