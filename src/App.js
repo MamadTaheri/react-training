@@ -19,7 +19,7 @@ class App extends Component {
 
         <div>
           <Switch>
-              <Route path="/blogs" component={Blogs} />
+              <Route path="/blogs" render={(props) => <Blogs name="Milad" {...props} />} />
               <Route path="/products" component={Products} />
               <Route path="/aboutus" component={AboutUS} />
               <Route path="/" component={HomePage} />
