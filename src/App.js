@@ -1,30 +1,24 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
+import ComponentA from './components/ComponentA';
+import ComponentB from './components/ComponentB';
 
 const App = () => {
+  console.log("App rendered")
+  const [valueA, setValueA] = useState("A")
+  const [valueB, setValueB] = useState("B")
 
-  const [isShown, setIsShown] = useState(true);
-  const [number, setNumber] = useState(0);
+  const changeHandlerA = useCallback(() => {
+    setValueA("AA")
+  }, [valueA])
 
-  const slow =useMemo(() => {
-    for (let i=0; i<1000000000; i++) {}
-    return isShown;
-  }, [isShown])
-
-  const showHandler = () => {
-    setIsShown(!isShown);
-  }
-
-  const numberHandler = () => {
-    setNumber(prevNumber => prevNumber + 1);
-  }
+  const changeHandlerB = useCallback(() => {
+    setValueB("BB")
+  }, [valueB])
 
   return (
     <div>
-      <button onClick={showHandler}>show/hide</button>
-      <span>{slow ? "Show" : "Hide"}</span>
-      <br/>
-      <button onClick={numberHandler}>+</button>
-      <span>{number}</span>
+      <ComponentA value={valueA} changeHandler={changeHandlerA} />
+      <ComponentB value={valueB} changeHandler={changeHandlerB}/>
     </div>
   );
 };
