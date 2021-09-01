@@ -1,24 +1,17 @@
-import React, { useState, useCallback } from 'react';
-import ComponentA from './components/ComponentA';
-import ComponentB from './components/ComponentB';
+import React, { useEffect, useRef } from 'react';
 
 const App = () => {
-  console.log("App rendered")
-  const [valueA, setValueA] = useState("A")
-  const [valueB, setValueB] = useState("B")
 
-  const changeHandlerA = useCallback(() => {
-    setValueA("AA")
-  }, [valueA])
+  const input = useRef(null)
 
-  const changeHandlerB = useCallback(() => {
-    setValueB("BB")
-  }, [valueB])
-
+  useEffect(() => {
+    console.log(input.current.value)
+    input.current.focus()
+  }, [])
+  
   return (
     <div>
-      <ComponentA value={valueA} changeHandler={changeHandlerA} />
-      <ComponentB value={valueB} changeHandler={changeHandlerB}/>
+      <input ref={input} type="text" />
     </div>
   );
 };
