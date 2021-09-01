@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import Landing from './components/Landing';
-import Login from './components/Login';
+import useLocalStorage from './hooks/useLocalStorage';
 
 const App = () => {
 
-  const [toggle, setToggle] = useState(true)
+  const [name, setName] = useLocalStorage("name", "")
 
   return (
     <div>
-      <button onClick={() => {setToggle(!toggle)}}>Toggle</button>
-      {toggle ? <Landing /> : <Login />}
+       <input type="text" value={name} onChange={event => setName(event.target.value)} />
     </div>
   );
 };
