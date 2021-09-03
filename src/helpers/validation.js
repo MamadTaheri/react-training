@@ -1,4 +1,4 @@
-const validate = data => {
+export const validation = data => {
     const errors = {};
 
     if (!data.name.trim()) {
@@ -25,7 +25,7 @@ const validate = data => {
 
     if(!data.confirmPassword) {
         errors.confirmPassword = "Confirm the password"
-    } else if (data.confirmPassword !== password) {
+    } else if (data.confirmPassword !== data.password) {
         errors.confirmPassword = "Password doesn't match"
     } else {
         delete errors.confirmPassword
@@ -37,5 +37,5 @@ const validate = data => {
         errors.isAccepted = "Accept our regulations"
     }
 
-    return errors
+    return errors;
 }

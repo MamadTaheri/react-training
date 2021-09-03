@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { validation } from "../../../helpers/validation";
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -8,14 +9,19 @@ const SignUp = () => {
     confirmPassword: "",
     isAccepted: false,
   });
+  const [errors, setErrors] = useState({});
 
-  const changeHandler = event => {
-     if(event.target.name === "isAccepted") {
-         setData({...data, [event.target.name]: event.target.checked})
-     } else {
-         setData({...data, [event.target.name]: event.target.value})
-     }
-  }; 
+  useEffect(() => {
+    setErrors(validation(data));
+  }, [data]);
+
+  const changeHandler = (event) => {
+    if (event.target.name === "isAccepted") {
+      setData({ ...data, [event.target.name]: event.target.checked });
+    } else {
+      setData({ ...data, [event.target.name]: event.target.value });
+    }
+  };
 
   return (
     <div>
@@ -29,6 +35,7 @@ const SignUp = () => {
             value={data.name}
             onChange={changeHandler}
           />
+          {errors.name && <span>{errors.name}</span>}
         </div>
         <div>
           <label>Email</label>
@@ -38,6 +45,7 @@ const SignUp = () => {
             value={data.email}
             onChange={changeHandler}
           />
+          {errors.email && <span>{errors.email}</span>}
         </div>
         <div>
           <label>Password</label>
@@ -47,6 +55,7 @@ const SignUp = () => {
             value={data.password}
             onChange={changeHandler}
           />
+          {errors.password && <span>{errors.password}</span>}
         </div>
         <div>
           <label>Confirm Password</label>
@@ -56,6 +65,7 @@ const SignUp = () => {
             value={data.confirmPassword}
             onChange={changeHandler}
           />
+          {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
         </div>
         <div>
           <label>I accept terms of terms of privacy policy</label>
@@ -65,6 +75,7 @@ const SignUp = () => {
             value={data.isAccepted}
             onChange={changeHandler}
           />
+          {errors.isAccepted && <span>{errors.isAccepted}</span>}
         </div>
         <div>
           <a href="#">Login</a>
