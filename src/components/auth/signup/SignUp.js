@@ -18,7 +18,7 @@ const SignUp = () => {
   const [touched, setTouched] = useState({});
 
   useEffect(() => {
-    setErrors(validation(data));
+    setErrors(validation(data,"signup"));
   }, [data, touched]);
 
   const changeHandler = (event) => {

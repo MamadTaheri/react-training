@@ -15,15 +15,12 @@ const Login = () => {
   const [touched, setTouched] = useState({});
 
   useEffect(() => {
-    setErrors(validation(data));
+    setErrors(validation(data, "login"));
   }, [data, touched]);
 
   const changeHandler = (event) => {
-    if (event.target.name === "isAccepted") {
-      setData({ ...data, [event.target.name]: event.target.checked });
-    } else {
-      setData({ ...data, [event.target.name]: event.target.value });
-    }
+    setData({ ...data, [event.target.name]: event.target.value });
+     
   };
 
   const focusHandler = (event) => {
@@ -33,15 +30,12 @@ const Login = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (!Object.keys(errors).length) {
-      notify("You signed in successfully", "success");
+      notify("You Logged in successfully", "success");
     } else {
       notify("Invalid data", "error");
       setTouched({
-        name: true,
         email: true,
         password: true,
-        confirmPassword: true,
-        isAccepted: true,
       });
     }
   };
@@ -50,7 +44,7 @@ const Login = () => {
     <div className={styles.container}>
       <form onSubmit={submitHandler} className={styles.formContainer}>
         <h2 className={styles.header}>Login</h2>
-         
+
         <div className={styles.formField}>
           <label>Email</label>
           <input
@@ -85,8 +79,7 @@ const Login = () => {
             <span>{errors.password}</span>
           )}
         </div>
-     
- 
+
         <div className={styles.formButtons}>
           <a href="#">Sign Up</a>
           <button type="submit">Login</button>
