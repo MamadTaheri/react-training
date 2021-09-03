@@ -1,9 +1,12 @@
-import React from 'react';
+import './App.css'
+
+import SignUp from "./components/auth/signup/SignUp"
+
 
 const App = () => {
   return (
-    <div>
-      
+    <div className="App">
+      <SignUp />
     </div>
   );
 };
