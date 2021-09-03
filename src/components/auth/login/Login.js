@@ -3,6 +3,7 @@ import { validation } from "../../../helpers/validation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notify } from "../../../helpers/toast";
+import { Link } from "react-router-dom";
 
 import styles from "./Login.module.css";
 
@@ -81,7 +82,7 @@ const Login = () => {
         </div>
 
         <div className={styles.formButtons}>
-          <a href="#">Sign Up</a>
+          <Link to="/signup">Sign Up</Link>
           <button type="submit">Login</button>
         </div>
       </form>
