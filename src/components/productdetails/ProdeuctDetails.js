@@ -19,7 +19,7 @@ const ProdeuctDetails = (props) => {
                <p>{description}</p>
                <p><span>Category: </span>{category}</p>
                <div>
-                  <soan>{price} $</soan>
+                  <span>{price} $</span>
                   <Link to="/products">Back to Shop</Link>
                </div>
             </div>
