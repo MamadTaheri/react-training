@@ -7,6 +7,9 @@ import { getCoin } from "../services/api";
 import Loader from "./Loader";
 import Coin from "./Coin";
 
+// Style
+import styles from './Landing.module.css'
+
 const Landing = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
@@ -14,7 +17,7 @@ const Landing = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       const data = await getCoin();
-      console.log(data);
+      // console.log(data);
       setCoins(data);
     };
 
@@ -29,9 +32,9 @@ const Landing = () => {
 
   return (
     <>
-      <input type="text" placeholder="Search" value={search} onChange={searchHandler} />
+      <input className={styles.input} type="text" placeholder="Search" value={search} onChange={searchHandler} />
       {coins.length ? (
-        <div>
+        <div className={styles.coinContainer}>
           {searchCoins.map((coin) => (
             <Coin
               key={coin.id}
