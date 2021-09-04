@@ -5,7 +5,7 @@ import Navbar from "./components/shared/Navbar";
 // Components
 import Store from "./components/store/Store";
 import ProdeuctDetails from "./components/productdetails/ProdeuctDetails";
-import ShopCart from "./components/ShopCart";
+import ShopCart from "./components/shopcart/ShopCart";
 
 // Context
 import ProductContextProvider from "./context/ProductContextProvider";
