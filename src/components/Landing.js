@@ -1,24 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 
 // Api
-import { getCoin } from '../services/api';
+import { getCoin } from "../services/api";
+
+// Components
+import Loader from "./Loader";
 
 const Landing = () => {
-   
-    useEffect(() => {
-        const fetchAPI = async () => {
-            const data = await getCoin();
-            console.log(data);
-        }
+  const [coins, setCoins] = useState([]);
 
-        fetchAPI()
-    }, [])
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const data = await getCoin();
+      console.log(data);
+      setCoins(data);
+    };
 
-    return (
+    fetchAPI();
+  }, []);
+
+  return (
+    <>
+      <input type="text" placeholder="Search" />
+      {coins.length ? (
         <div>
-            Landing
+          {coins.map((coin) => (
+            <p key={coin.id}>{coin.name}</p>
+          ))}
         </div>
-    );
+      ) : (
+        <Loader />
+      )}
+    </>
+  );
 };
 
 export default Landing;
