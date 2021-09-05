@@ -1,15 +1,22 @@
-import { Switch, Route,  } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import Chat from "./components/Chat";
 
 // Components
 import Login from "./components/Login";
 
+// Contexts
+import AuthContextProvider from "./contexts/AuthContextProvider";
+
 const App = () => {
-  return ( 
-     <div className="App">
+  return (
+    <div className="App">
+      <AuthContextProvider>
         <Switch>
-           <Route path="/" component={Login} />
+           <Route path="/chats" component={Chat} />
+          <Route path="/" component={Login} />
         </Switch>
-     </div>
+      </AuthContextProvider>
+    </div>
   );
 };
 
