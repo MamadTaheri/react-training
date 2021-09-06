@@ -1,21 +1,30 @@
-import './App.css'
-import Counter from "./components/Counter";
-import Number from './components/Number';
-import Users from './components/Users';
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import './App.css';
+import { Route, Switch, Redirect } from "react-router-dom";
 
-const App = () => {
+// Components
+import Store from './components/Store';
+import ProductDetails from './components/ProductDetails';
+import Navbar from './components/shared/Navbar';
+import ShopCart from './components/ShopCart';
+
+// Context
+import ProductContextProvider from './context/ProductContextProvider';
+import CartContextProvider from './context/CartContextProvider';
+
+function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Counter />
-        <br/>
-        <Number />
-        <Users />
-      </div>
-    </Provider>
+    <ProductContextProvider>
+      <CartContextProvider>
+        <Navbar />
+        <Switch>
+          <Route path="/products/:id" component={ProductDetails} />
+          <Route path="/products" component={Store} />
+          <Route path="/cart" component={ShopCart} />
+          <Redirect to="/products" />
+        </Switch>
+      </CartContextProvider>
+    </ProductContextProvider>
   );
-};
+}
 
 export default App;
