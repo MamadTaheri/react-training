@@ -1,9 +1,13 @@
 import "./App.css";
+import Parent from "./components/Parent";
 
 function App() {
+  const clickHandler = () => {
+    console.log("Click")
+  }
   return (
       <div className="App">
-        App
+        <Parent clickHandler={clickHandler} />
       </div>
   );
 }
