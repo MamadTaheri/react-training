@@ -1,5 +1,5 @@
 import React from 'react';
-import { increaseCounterAction } from '../redux/counter/counterAction';
+import { increaseCounterAction, decreaseCounterAction } from '../redux/counter/counterAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Counter = () => {
@@ -9,8 +9,9 @@ const Counter = () => {
 
     return (
         <div>
-            <h1>Counter ---= {counter} </h1>
+            <h1>Counter = {counter} </h1>
             <button onClick={() => {dispatch(increaseCounterAction())}}>Increase</button>
+            <button onClick={() => {dispatch(decreaseCounterAction())}}>Decrease</button>
         </div>
     );
 };
