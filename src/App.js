@@ -1,13 +1,14 @@
-import React from 'react';
-import Counter from './components/Counter';
+import React from "react";
+import Counter from "./components/Counter";
 
 const App = () => {
-    return (
-        <div>
-            <h1>App</h1>
-            <Counter />
-        </div>
-    );
+  return (
+    <div className="container">
+      <div className="row justify-content-center">
+        <Counter />
+      </div>
+    </div>
+  );
 };
 
 export default App;
