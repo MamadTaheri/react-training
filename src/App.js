@@ -1,12 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import Counters from "./components/Counters";
+import Navbar from "./components/Navbar";
 
-const App = () => {
-  return (
-    <div>
-     <Counters />
-    </div>
-  );
-};
-
-export default App;
+export default class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar />
+        <main className="container">
+          <Counters />
+        </main>
+      </React.Fragment>
+    );
+  }
+}
