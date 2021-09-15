@@ -1,12 +1,10 @@
 import React from "react";
-import Counter from "./components/Counter";
+import Counter from "./components/Counter.js"
 
 const App = () => {
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <Counter />
-      </div>
+    <div className="container-fluid">
+     <Counter />
     </div>
   );
 };
