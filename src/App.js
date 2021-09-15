@@ -1,10 +1,10 @@
 import React from "react";
-import Counter from "./components/Counter.js"
+import Counters from "./components/Counters";
 
 const App = () => {
   return (
-    <div className="container-fluid">
-     <Counter />
+    <div>
+     <Counters />
     </div>
   );
 };
