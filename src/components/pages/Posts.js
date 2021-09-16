@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import loader from '../asset/gif/loading.gif'
+import loader from '../../asset/gif/loading.gif'
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
