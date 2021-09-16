@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import loader from '../asset/gif/loading.gif'
 
 const Main = () => {
   const [posts, setPosts] = useState([]);
@@ -11,7 +12,7 @@ const Main = () => {
   };
 
   useEffect(() => {
-    fetchDataFromServer();
+    setTimeout(fetchDataFromServer, 1000);
   }, []);
 
   return (
@@ -21,7 +22,9 @@ const Main = () => {
           {posts.map(post => <li className="bg-success text-white m-1" key={post.id}>{post.title}</li>)}
         </ul>
       ) : (
-        <h1>Loading...</h1>
+        <div className="text-center p-5 m-5 ">
+            <img src={loader} alt="isLoading" />
+        </div>
       )}
     </div>
   );
