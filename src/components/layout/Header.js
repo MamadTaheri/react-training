@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
+        <header className="bg-primary text-white p-3" style={{cursor:"pointer"}}>
             Header
-        </div>
+        </header>
     );
 };
 
