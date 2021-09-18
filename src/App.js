@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Route } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import AboutUs from './components/AboutUs'
 import Blogs from './components/Blogs'
 import HomePage from './components/HomePage'
@@ -11,19 +11,20 @@ export default class App extends Component {
     return (
       <div>
         <ul>
-          <li><a href="/">Home page</a></li>
-          <li><a href="/blogs">Blogs</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/aboutus">About Us</a></li>
+          <li><Link to="/">Home page</Link></li>
+          <li><Link to="/blogs">Blogs</Link></li>
+          <li><Link to="/products">Products</Link></li>
+          <li><Link to="/aboutus">About Us</Link></li>
         </ul>
         <div>
-           <Route path="/" component={HomePage} />
-           <Route path="/blogs" component={Blogs} />
-           <Route path="/products" component={Products} />
-           <Route path="/aboutus" component={AboutUs} />
+          <Switch>
+            <Route path="/blogs" component={Blogs} />
+            <Route path="/products" component={Products} />
+            <Route path="/aboutus" component={AboutUs} />
+            <Route path="/" component={HomePage} />
+          </Switch>
         </div>
       </div>
     )
   }
 }
-
