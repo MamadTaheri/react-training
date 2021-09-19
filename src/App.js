@@ -14,7 +14,7 @@ export default class App extends Component {
         <Navbar />
         <div>
           <Switch>
-            <Route path="/blogs" component={Blogs} />
+            <Route path="/blogs" render={(props) => <Blogs name="milad" {...props} /> } />
             <Route path="/products" component={Products} />
             <Route path="/aboutus" component={AboutUs} />
             <Route path="/" component={HomePage} />
