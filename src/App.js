@@ -6,6 +6,7 @@ import Blogs from './components/Blogs'
 import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
 import Products from './components/Products'
+import Product from './components/Product'
 
 export default class App extends Component {
   render() {
@@ -14,7 +15,8 @@ export default class App extends Component {
         <Navbar />
         <div>
           <Switch>
-            <Route path="/blogs" render={(props) => <Blogs name="milad" {...props} /> } />
+            <Route path="/products/:id" component={Product} />
+            <Route path="/blogs/:author?" render={(props) => <Blogs name="milad" {...props} /> } />
             <Route path="/products" component={Products} />
             <Route path="/aboutus" component={AboutUs} />
             <Route path="/" component={HomePage} />
