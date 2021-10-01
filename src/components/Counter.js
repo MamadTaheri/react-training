@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 
 const Counter = () => {
+
   const [number, setNumber] = useState(0);
+  const [name, setName] = useState("Mamad")
+
+  const nameHandler = () => {
+    setName("Ali")
+  }
 
   const increaseHandler = () => {
-    setNumber(number + 1)
+    setNumber(prevNumber => prevNumber + 1)
   }
 
   const decreaseHandler = () => {
-    setNumber(number - 1)
+    setNumber(prevNumber => prevNumber - 1)
   }
 
   return (
-    <div>
+    <>
       <div className="">
         <h1 className="">Number is : {number}</h1>
         <button
@@ -28,7 +34,11 @@ const Counter = () => {
           Decrease Number
         </button>
       </div>
-    </div>
+      <div className=''>
+         <h1 className=''>Name is : {name}</h1>
+         <button className='' onClick={nameHandler}>Change namde</button>
+      </div>
+    </>
   );
 };
 
