@@ -1,10 +1,14 @@
-import React from 'react';
-import Form from './components/Form';
+import React, { useState } from 'react';
+import Logger from './components/Logger';
 
 const App = () => {
+
+  const [isShown, setIsShown] = useState(true)
+
   return (
     <div>
-       <Form /> 
+      <button className="" onClick={() => setIsShown(false)}>Delete</button>
+      {isShown && <Logger />}
     </div>
   );
 };
