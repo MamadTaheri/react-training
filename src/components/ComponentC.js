@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from "react";
 
-const ComponentC = ({name}) => {
-    return (
-        <div>
-            <h1 className="">This is Comp C with remote data : {name}</h1>
-        </div>
-    );
+import { NameContext, AgeContext } from "../App";
+
+const ComponentC = () => {
+
+    const name = useContext(NameContext);
+    const age = useContext(AgeContext);
+
+  return (
+    <div>
+      <h1>name : {name}</h1>
+      <h1>age : {age}</h1>
+    </div>
+  );
 };
 
 export default ComponentC;

@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import ComponentA from "./components/ComponentA";
 
-const App = () => {
+export const NameContext = React.createContext();
+export const AgeContext = React.createContext();
 
-  const [name, setName] = useState("Milad");
+const App = () => {
+  const [name, setName] = useState("mamad");
 
   return (
     <div>
-      <ComponentA name={name} />
+      <NameContext.Provider value={name}>
+        <AgeContext.Provider value={24}>
+          <ComponentA />
+        </AgeContext.Provider>
+      </NameContext.Provider>
     </div>
   );
 };
