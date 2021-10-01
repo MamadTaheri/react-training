@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Data from "./components/Data";
+import ComponentA from "./components/ComponentA";
 
 const App = () => {
+
+  const [name, setName] = useState("Milad");
+
   return (
     <div>
-      <Data />
+      <ComponentA name={name} />
     </div>
   );
 };
