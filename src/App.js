@@ -19,16 +19,15 @@ class App extends Component {
   }
 
   sendPostRequest = () => {
-
     const body = JSON.stringify({
       title: "mamad",
       body: "taheri",
       userId: 1,
-    })
+    });
 
     const headers = {
       "Content-type": "application/json; charset=UTF-8",
-    }
+    };
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
@@ -39,6 +38,13 @@ class App extends Component {
       .then((json) => console.log(json));
   };
 
+  sendDeleteRequest = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "DELETE",
+    })
+    .then(response => console.log(response))
+  };
+
   render() {
     return (
       <div>
@@ -47,6 +53,10 @@ class App extends Component {
         {/* {this.state.postData.map(post => <p key={post.id}>{post.id + " -> " + post.title}</p>)} */}
         <button className="" onClick={this.sendPostRequest}>
           Send Post request
+        </button>
+        <br />
+        <button className="" onClick={this.sendDeleteRequest}>
+          Send Delete request
         </button>
       </div>
     );
