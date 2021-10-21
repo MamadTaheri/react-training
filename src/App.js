@@ -1,34 +1,16 @@
-import React, { Component } from "react";
-import axios from "axios";
-import Post from "./components/Post";
-import SendPost from "./components/SendPost";
+import React from 'react';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      postData: [],
-    };
-  }
+import { createContext } from 'react';
+import Card from './components/Card';
 
-  componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then((response) =>
-      this.setState({
-        postData: response.data,
-      })
-    );
-  }
+const AppContext = createContext();
 
-  render() {
-    
-    return (
-      <div>
-        {/* {this.state.postData.map(post => <Post key={post.id} title={post.title} body={post.body} />)} */}
-        <SendPost />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <AppContext.Provider value={{ firstName: "ali" }}>
+      <Card />
+    </AppContext.Provider>
+  );
+};
 
 export default App;
