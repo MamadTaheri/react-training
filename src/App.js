@@ -1,15 +1,12 @@
 import React from 'react';
-
-import { createContext } from 'react';
 import Card from './components/Card';
-
-const AppContext = createContext();
+import AuthState from './context/AuthState';
 
 const App = () => {
   return (
-    <AppContext.Provider value={{ firstName: "ali" }}>
-      <Card />
-    </AppContext.Provider>
+      <AuthState>
+        <Card />
+      </AuthState>
   );
 };
 
