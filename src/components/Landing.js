@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
+import useTitle from '../hooks/useTitle';
 
 const Landing = () => {
 
-    useEffect(() => {
-        document.title = "Landing page"
-    }, [])
+    useTitle("LANDING PAGE");
 
     return (
         <div>
