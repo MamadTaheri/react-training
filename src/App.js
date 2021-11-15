@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductList from './components/ProductList';
 
 const App = () => {
     return (
@@ -6,6 +7,7 @@ const App = () => {
             <div>
                 <h1>salam</h1>
             </div>
+            <ProductList />
         </>
     );
 };
