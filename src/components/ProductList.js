@@ -5,6 +5,12 @@ const ProductList = () => {
         {id: 101, title: 'react learning'},
         {id: 102, title: 'javascript sterp by step' }
     ])
+
+    const removeBook = (id) => {
+        const temp = books.filter(q => q.id != id)
+        setBooks([...temp]);
+    }
+
     return (
         <>
            <div className="container">
@@ -27,7 +33,7 @@ const ProductList = () => {
                                 <td>{book.id}</td>
                                 <td>{book.title}</td>
                                 <td>
-                                    <button className="btn btn-danger btn-sm">
+                                    <button onClick={() => removeBook(book.id)} className="btn btn-danger btn-sm">
                                         remove
                                     </button>
                                 </td>
