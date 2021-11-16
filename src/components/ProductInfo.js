@@ -7,6 +7,7 @@ const ProductInfo = ({info}) => {
         <div className="card-body">
           <h4>Code : {info.id}</h4>
           <h5>Title : {info.title}</h5>
+          <button className="btn btn-danger">remove</button>
         </div>
       </div>
     </div>
