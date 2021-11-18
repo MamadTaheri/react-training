@@ -7,6 +7,8 @@ const ProductList = () => {
 
     const [items, setItems] = useState(initialProducts);
 
+    const tempItem =  {id: null, title: '', price: null, editMode: false}
+
     const removeItem = (id) => {
         if(window.confirm('are you sure remove item ? ')){
             setItems([...items.filter(q => q.id !== id)])
@@ -35,14 +37,13 @@ const ProductList = () => {
         <div className="container">
             <h2>Product List with Function Component</h2>
             <div className="row">
-                {
-                    items.map((item, index) =>
-                        item.editMode ?
-                            <ProductEdit key={item.id} info={item} save={editItem} cancel={setEditMode} />
-                            :
-                            <ProductInfo key={item.id} info={item} removeItem={removeItem} setEditMode={setEditMode} />
-                    )
-                }
+                {items.map((item, index) =>
+                    item.editMode ?
+                        <ProductEdit key={item.id} info={item} save={editItem} cancel={setEditMode}/>
+                        :
+                        <ProductInfo key={item.id} info={item} removeItem={removeItem} setEditMode={setEditMode}/>
+                )}
+                <ProductEdit info={tempItem} save={addItem} cancel={setEditMode}/>
             </div>
         </div>
     );
