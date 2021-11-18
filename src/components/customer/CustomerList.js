@@ -6,13 +6,25 @@ class CustomerList extends Component {
 
     state = {customers: initialCustomers}
 
+    removeCustomer = (id) => {
+        this.setState({
+            customers: this.state.customers.filter(q => q.id !== id)
+        })
+    }
+
     render() {
         return (
             <div className="container">
                 <h2>Customer List with Class Components</h2>
                 <div className="row">
                     {
-                        this.state.customers.map((customer, index) => <CustomerInfo key={customer.id} customer={customer} /> )
+                        this.state.customers.map((customer, index) =>
+                            <CustomerInfo
+                                key={customer.id}
+                                customer={customer}
+                                removeCustomer={this.removeCustomer}
+                            />
+                        )
                     }
                 </div>
             </div>
