@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {initialItems} from "../../assets/data";
+import {initialProducts} from "../../assets/data";
 import ProductInfo from "./ProductInfo";
 
 const ProductList = () => {
 
-    const [items, setItems] = useState(initialItems);
+    const [items] = useState(initialProducts);
 
     return (
         <div className="container">
