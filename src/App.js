@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import ProductList from "./components/product/ProductList";
 import CustomerList from "./components/customer/CustomerList";
+import Counter from "./components/Counter";
+import Counter2 from "./components/Counter2";
+import Counter3 from "./components/Counter3";
 
 function App() {
     const [showProductComponent, setShowProductComponent] = useState(true);
+    const [counter, setCounter] = useState(5);
     return (
         <div>
             <h1>Hello World</h1>
@@ -13,6 +17,13 @@ function App() {
             <br />
             <br />
             {showProductComponent ? <ProductList /> : <CustomerList />}
+            <h4>Pure Component Sample</h4>
+            <label>Counter Value :
+                <input type={"number"} onChange={(event) => setCounter(parseInt(event.target.value))} />
+            </label>
+            <Counter counter={counter} />
+            <Counter2 counter={counter} />
+            <Counter3 counter={counter} />
         </div>
     );
 }
