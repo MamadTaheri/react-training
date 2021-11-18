@@ -1,7 +1,7 @@
 export const initialProducts = [
-    {id: 101, title: 'Monitor', price: 150},
-    {id: 102, title: 'Mouse', price: 30},
-    {id: 103, title: 'Keyboard', price: 40},
+    {id: 101, title: 'Monitor', price: 150, editMode: false},
+    {id: 102, title: 'Mouse', price: 30, editMode: false},
+    {id: 103, title: 'Keyboard', price: 40, editMode: false},
 ]
 
 export const initialCustomers = [
