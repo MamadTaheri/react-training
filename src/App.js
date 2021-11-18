@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import ProductList from "./components/product/ProductList";
 import CustomerList from "./components/customer/CustomerList";
-import Counter from "./components/Counter";
-import Counter2 from "./components/Counter2";
-import Counter3 from "./components/Counter3";
+import Counter from "./components/counter/Counter";
+import Counter2 from "./components/counter/Counter2";
+import Counter3 from "./components/counter/Counter3";
 
 function App() {
     const [showProductComponent, setShowProductComponent] = useState(true);

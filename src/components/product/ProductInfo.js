@@ -7,7 +7,8 @@ const ProductInfo = ({info, removeItem}) => {
                 <div className="card-body">
                     <h3>Title: {info.title}</h3>
                     <h3>Price: {info.price}</h3>
-                    <button className="btn btn-danger btn-lg" onClick={() => removeItem(info.id)}>Remove</button>
+                    <button className="btn btn-warning btn-sm mx-3">Edit</button>
+                    <button className="btn btn-danger btn-sm" onClick={() => removeItem(info.id)}>Remove</button>
                 </div>
             </div>
         </div>
