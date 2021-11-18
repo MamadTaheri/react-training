@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductList = ({data}) => {
+const ProductList = ({data, editMode}) => {
     return (
         <table className="table table-striped table-bordered table-hover">
             <thead>
@@ -14,13 +14,13 @@ const ProductList = ({data}) => {
             </thead>
             <tbody>
             {data.map(item =>
-                <tr key={item.id}>
+                <tr className={item.editMode ? 'selected-row' : ''} key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.title}</td>
                     <td>{item.categoryName}</td>
                     <td>{item.price}</td>
                     <td>
-                        <button className="btn btn-warning btn-sm mx-lg-2">ویرایش</button>
+                        <button className="btn btn-warning btn-sm mx-lg-2" onClick={() => editMode(item.id)}>ویرایش</button>
                         <button className="btn btn-danger btn-sm mx-lg-2">حذف</button>
                     </td>
                 </tr>

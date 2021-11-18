@@ -2,9 +2,24 @@ import React, {useState} from 'react';
 
 import {categories, products} from "../../globalData/initialData";
 import ProductList from "./ProductList";
+import ProductInfo from "./ProductInfo";
 
 const ProductContainer = () => {
     const [items, setItems] = useState(products);
+    const [selectedItem, setSelectedItem] = useState({});
+    const setEditMode = id => {
+        const temp =[...items];
+        const index = temp.findIndex(q => q.id === id);
+        temp.forEach(q => q.editMode = false);
+        temp[index].editMode = true;
+        setItems([...temp]);
+        setSelectedItem(temp[index]);
+    }
+
+    const saveItem = item => {
+
+    }
+
     return (
         <>
             <div className="card">
@@ -12,9 +27,11 @@ const ProductContainer = () => {
                 <div className="card-body">
                     <div className="row">
                         <div className="col-md-7">
-                            <ProductList data={items} />
+                            <ProductList data={items} editMode={setEditMode} />
                         </div>
-                        <div className="col-md-5">ProductInfo</div>
+                        <div className="col-md-5">
+                            <ProductInfo categories={categories} product={selectedItem} />
+                        </div>
                     </div>
                 </div>
             </div>

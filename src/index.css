@@ -8,3 +8,6 @@ body {
     direction: rtl;
     text-align: right;
 }
+.selected-row {
+    background-color: yellow !important;
+}
