@@ -17,7 +17,10 @@ const ProductContainer = () => {
     }
 
     const saveItem = item => {
-
+        const category = categories.find(q => q.id === parseInt(item.categoryId));
+        item = {...item, categoryName: category.title, editMode: false};
+        const temp = [...items, item];
+        setItems([...temp]);
     }
 
     return (
@@ -30,7 +33,7 @@ const ProductContainer = () => {
                             <ProductList data={items} editMode={setEditMode} />
                         </div>
                         <div className="col-md-5">
-                            <ProductInfo categories={categories} product={selectedItem} />
+                            <ProductInfo categories={categories} product={selectedItem} save={saveItem} />
                         </div>
                     </div>
                 </div>

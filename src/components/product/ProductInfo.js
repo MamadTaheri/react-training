@@ -2,13 +2,12 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import {nullProduct} from "../../globalData/initialData";
 
-const ProductInfo = ({categories, product = nullProduct}) => {
+const ProductInfo = ({categories , product = nullProduct, save}) => {
     // console.log(product);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
         // useForm({defaultValues: {...product}});
     const submitForm = data => {
-        console.log(data);
-        console.log(watch("id"));
+        save(data);
     }
     return (
         <form onSubmit={handleSubmit(submitForm)}>
