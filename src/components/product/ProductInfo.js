@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import {nullProduct} from "../../globalData/initialData";
 
 const ProductInfo = ({categories , product, save}) => {
     console.log(product);
