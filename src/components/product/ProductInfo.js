@@ -1,21 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {nullProduct} from "../../globalData/initialData";
 
-const ProductInfo = ({categories , product = nullProduct, save}) => {
-    // console.log(product);
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-        // useForm({defaultValues: {...product}});
+const ProductInfo = ({categories , product, save}) => {
+    console.log(product);
+    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm({defaultValues: {...product}});
+
+    useEffect(() => {
+        reset({...product})
+    }, [product])
     const submitForm = data => {
         save(data);
     }
+
     return (
         <form onSubmit={handleSubmit(submitForm)}>
-            <div className="mb-3">
-                <label>کد محصول</label>
-                <input type="text" className="form-control" name="id" {...register("id", { required: true })} />
-                {errors.id && <small className="form-text text-danger">کد اجباری می باشد</small>}
-            </div>
+            <input type="hidden" name="id" {...register("id")}  />
+            {/*<div className="mb-3">*/}
+            {/*    <label>کد محصول</label>*/}
+            {/*    <input type="text" className="form-control" name="id" {...register("id", { required: true })} />*/}
+            {/*    {errors.id && <small className="form-text text-danger">کد اجباری می باشد</small>}*/}
+            {/*</div>*/}
             <div className="mb-3">
                 <label>عنوان محصول</label>
                 <input type="text" className="form-control" name="title" {...register("title", { required: true })} />
@@ -23,7 +28,7 @@ const ProductInfo = ({categories , product = nullProduct, save}) => {
             </div>
             <div className="mb-3">
                 <label>گروه محصول</label>
-                <select name="categoryId" {...register("categoryId")} className="form-select" >
+                <select name="categoryID" {...register("categoryID")} className="form-select" >
                     <option value="0">انتخاب کنید</option>
                     {categories.map((item, index) => <option key={item.id} value={item.id}>{item.title}</option>)}
                 </select>

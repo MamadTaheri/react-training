@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import {categories, products} from "../../globalData/initialData";
 import ProductList from "./ProductList";
@@ -7,8 +8,9 @@ import ProductInfo from "./ProductInfo";
 const ProductContainer = () => {
     const [items, setItems] = useState(products);
     const [selectedItem, setSelectedItem] = useState({});
+
     const setEditMode = id => {
-        const temp =[...items];
+        const temp = [...items];
         const index = temp.findIndex(q => q.id === id);
         temp.forEach(q => q.editMode = false);
         temp[index].editMode = true;
@@ -17,10 +19,22 @@ const ProductContainer = () => {
     }
 
     const saveItem = item => {
-        const category = categories.find(q => q.id === parseInt(item.categoryId));
+        const category = categories.find(q => q.id === parseInt(item.categoryID));
         item = {...item, categoryName: category.title, editMode: false};
-        const temp = [...items, item];
-        setItems([...temp]);
+        if (item.id !== "") {
+            // Edit selected item
+            const temp = [...items];
+            const index = temp.findIndex(q => q.id === parseInt(item.id));
+            temp[index] = item;
+            setItems([...temp]);
+        } else {
+            // Add new item
+            item.id = uuidv4();
+            const temp = [...items, item];
+            setItems([...temp]);
+        }
+        setSelectedItem({});
+
     }
 
     return (
@@ -30,10 +44,10 @@ const ProductContainer = () => {
                 <div className="card-body">
                     <div className="row">
                         <div className="col-md-7">
-                            <ProductList data={items} editMode={setEditMode} />
+                            <ProductList data={items} editMode={setEditMode}/>
                         </div>
                         <div className="col-md-5">
-                            <ProductInfo categories={categories} product={selectedItem} save={saveItem} />
+                            <ProductInfo categories={categories} product={selectedItem} save={saveItem}/>
                         </div>
                     </div>
                 </div>
