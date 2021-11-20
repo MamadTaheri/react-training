@@ -1,7 +1,9 @@
 import React from 'react';
 import ProductContainer from "./components/product/ProductContainer";
 import logo from '../src/assets/images/logo.JPG'
-import {BrowserRouter as Router, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Route, Routes, Switch} from 'react-router-dom'
+import {localRoutes} from "./globalData/localRoutes";
+import MainDashboard from "./components/dashboard/MainDashboard";
 
 const App = () => {
     return (
@@ -26,10 +28,10 @@ const App = () => {
                 </div>
             </nav>
             <div className="container-fluid p-4">
-                <ProductContainer />
-            </div>
-            <div className="container-fluid">
-
+                <Routes>
+                    <Route path={localRoutes.dashboard} element={<MainDashboard /> } />
+                    <Route path={localRoutes.products} element={<ProductContainer /> } />
+                </Routes>
             </div>
         </Router>
     );
