@@ -4,6 +4,7 @@ import logo from '../src/assets/images/logo.JPG'
 import {BrowserRouter as Router, NavLink, Route, Routes, Switch} from 'react-router-dom'
 import {localRoutes} from "./globalData/localRoutes";
 import MainDashboard from "./components/dashboard/MainDashboard";
+import PageNotFound from "./components/page-not-found/PageNotFound";
 
 const App = () => {
     return (
@@ -29,6 +30,7 @@ const App = () => {
                 <Routes>
                     <Route path={localRoutes.dashboard} element={<MainDashboard /> } />
                     <Route path={localRoutes.products} element={<ProductContainer /> } />
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </div>
         </Router>
