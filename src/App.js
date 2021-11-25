@@ -1,5 +1,6 @@
 import React from 'react';
 import Checkbox from "./components/Checkbox";
+import DependencyComponent from "./components/DependencyComponent";
 
 const App = () => {
     return (
@@ -9,6 +10,7 @@ const App = () => {
                     <h3>App</h3>
                     <hr />
                     <Checkbox />
+                    <DependencyComponent />
                 </div>
             </div>
         </div>
