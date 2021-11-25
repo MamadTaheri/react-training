@@ -1,6 +1,7 @@
 import React from 'react';
+import DeepDependenciy from "./components/DeepDependenciy";
 // import Checkbox from "./components/Checkbox";
-import DependencyComponent from "./components/DependencyComponent";
+// import DependencyComponent from "./components/DependencyComponent";
 
 const App = () => {
     return (
@@ -10,7 +11,8 @@ const App = () => {
                     <h3>App</h3>
                     <hr />
                     {/*<Checkbox />*/}
-                    <DependencyComponent />
+                    {/*<DependencyComponent />*/}
+                    <DeepDependenciy />
                 </div>
             </div>
         </div>
