@@ -1,28 +1,16 @@
-import React, {useEffect, useLayoutEffect} from 'react';
-// import DeepDependenciy from "./components/DeepDependenciy";
-// import Checkbox from "./components/Checkbox";
-// import DependencyComponent from "./components/DependencyComponent";
+import React, {useState} from 'react';
+import Cat from "./components/Cat";
 
 const App = () => {
-
-    useEffect(() => console.log("useEffect"));
-    useLayoutEffect(() => console.log("useLayoutEffect"));
-
-
-
+    const [cats, setCats] = useState(["Biscuit", "Jungle", "Outlaw"]);
+    console.clear();
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-4 text-center">
-                    {console.log("render")}
-                    <h3>App</h3>
-                    <hr />
-                    {/*<Checkbox />*/}
-                    {/*<DependencyComponent />*/}
-                    {/*<DeepDependenciy />*/}
-                </div>
-            </div>
-        </div>
+        <>
+            {cats.map((name, i) =>
+                <Cat key={i} name={name} />
+            )}
+            <button onClick={() => setCats([...cats, prompt("Name a Catd")])}>Add a Cat</button>
+        </>
     );
 };
 
