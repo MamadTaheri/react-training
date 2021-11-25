@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from "./components/Checkbox";
+// import Checkbox from "./components/Checkbox";
 import DependencyComponent from "./components/DependencyComponent";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
                 <div className="col-md-4 text-center">
                     <h3>App</h3>
                     <hr />
-                    <Checkbox />
+                    {/*<Checkbox />*/}
                     <DependencyComponent />
                 </div>
             </div>
