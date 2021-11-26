@@ -34,8 +34,8 @@ const App = () => {
     // );
     return (
         <FixedSizeList
-            height={window.innerHeight}
-            width={window.innerWidth - 20}
+            height={window.innerHeight -20}
+            width={400 }
             itemCount={bigList.length}
             itemSize={50}
         >
