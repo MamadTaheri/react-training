@@ -1,18 +1,11 @@
-import React, {useState} from 'react';
-// import Cat from "./components/Cat";
-import {PureCat} from "./components/PureCat";
+import React from 'react';
+import GitHubUser from "./components/GitHubUser";
 
 const App = () => {
-    const [cats, setCats] = useState(["Biscuit", "Jungle", "Outlaw"]);
-    console.clear();
     return (
-        <>
-            {cats.map((name, i) =>
-                // <Cat key={i} name={name} />
-                <PureCat key={i} name={name} />
-            )}
-            <button onClick={() => setCats([...cats, prompt("Name a Catd")])}>Add a Cat</button>
-        </>
+        <div className="border border-primary m-5">
+            <GitHubUser login="MamadTaheri68" />
+        </div>
     );
 };
 
