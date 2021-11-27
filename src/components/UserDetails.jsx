@@ -11,10 +11,10 @@ const UserDetails = ({data}) => {
                 {data.location && <p>{data.location}</p>}
             </div>
             <div className="d-flex justify-content-center">
-                <UserRepositories
-                    login={data.login}
-                    onSelect={repoName => console.log(`${repoName} selected`)}
-                />
+                {/*<UserRepositories*/}
+                {/*    login={data.login}*/}
+                {/*    onSelect={repoName => console.log(`${repoName} selected`)}*/}
+                {/*/>*/}
             </div>
         </div>
     );
