@@ -50,5 +50,4 @@ describe('All tests together', function () {
         expect(order(menuItems))
             .toEqual(result)
     });
-
 });

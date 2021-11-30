@@ -3,5 +3,6 @@ import ReactDOM from "react-dom";
 import  App  from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
+import Star from "./Star";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Star /> , document.getElementById("root"));
