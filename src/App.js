@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link, Route, Routes} from "react-router-dom"
+import {Link, Navigate, Route, Routes} from "react-router-dom";
+
 import {About, Contact, Events, Home, Products} from "./pages";
 import Whoops404 from "./Whoops404";
 import Services from "./Services";
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/events" element={<Events />}/>
                 <Route path="/products" element={<Products />}/>
                 <Route path="/contact" element={<Contact />}/>
+                <Route path="services" element={<Navigate to="/yabout/services" />} />
                 <Route path="*" element={<Whoops404 />}/>
             </Routes>
 
