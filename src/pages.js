@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 export function Home() {
     return (
@@ -14,6 +14,7 @@ export function About() {
     return (
         <div>
             <h1>[About]</h1>
+            <Outlet />
         </div>
     );
 }
