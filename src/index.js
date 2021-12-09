@@ -1,7 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css'
+import {createStore} from "redux";
+import Counter from "./components/Counter";
+import {ActionConstants} from "./ActionConstants";
 
-ReactDOM.render(<App/>  , document.getElementById("root"));
+import counter from "./reducres";
+
+const store = createStore(counter);
+const rootElement = document.getElementById("root");
+
+const render = () => ReactDOM.render(
+    <Counter
+        value = {store.getState()}
+        onIncrement = {() => store.dispatch({ type: ActionConstants.INCREMENT })}
+        onDecrement = {() => store.dispatch({ type: ActionConstants.DECREMENT })}
+    />, rootElement
+)
+
+render();
+
+store.subscribe(render)
+
