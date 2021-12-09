@@ -5,7 +5,7 @@ class Counter extends Component {
         const { value, onIncrement, onDecrement } = this.props;
         return (
             <div>
-                <h2>Count: </h2>
+                <h2>Count: {value}</h2>
                 <button onClick={onIncrement}>Increment</button>
                 <button onClick={onDecrement}>Decrement</button>
             </div>
