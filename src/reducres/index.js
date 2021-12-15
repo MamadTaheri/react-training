@@ -6,6 +6,8 @@ export default (state = 0, action) => {
             return state + 1
         case ActionConstants.DECREMENT :
             return state - 1
+        case ActionConstants.RESET :
+            return 0
         default:
             return state
     }
