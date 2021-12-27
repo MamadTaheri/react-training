@@ -1,10 +1,19 @@
-import React from 'react';
+import SplitScreen from "./components/SplitScreen";
+
+const LeftHandComponent = () => {
+    return <h1 style={{backgroundColor: 'green'}}>Left!</h1>
+}
+
+const RighttHandComponent = () => {
+    return <h1 style={{backgroundColor: 'red'}}>Right!</h1>
+}
 
 const App = () => {
     return (
-        <div>
-            <h1>Hello World</h1>
-        </div>
+        <SplitScreen
+            left={LeftHandComponent}
+            right={RighttHandComponent}
+        />
     );
 };
 
