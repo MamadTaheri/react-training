@@ -1,5 +1,0 @@
-Layout Components :
-React Components that deal primarily with arranging other components on the page
-
-the idea of Layout Components :
-Our components shouldn't know where they're being displayed.
