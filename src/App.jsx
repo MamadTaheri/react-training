@@ -1,8 +1,11 @@
+import CurrentUserLoader from "./components/CurrentUserLoader";
+import UserInfo from "./components/people/UserInfo";
+
 const App = () => {
     return (
-        <div>
-
-        </div>
+        <CurrentUserLoader>
+            <UserInfo />
+        </CurrentUserLoader>
     );
 };
 
