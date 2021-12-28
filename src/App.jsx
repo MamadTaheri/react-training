@@ -8,6 +8,10 @@ const RighttHandComponent = ({ message }) => {
     return <h1 style={{backgroundColor: 'red'}}>{message}!</h1>
 }
 
+import {people} from "./data/people";
+import {products} from "./data/products";
+
+
 const App = () => {
     return (
         <SplitScreen leftWeight={1} rightWeight={3}>
