@@ -6,10 +6,16 @@ import LargePersonListItem from "./components/people/LargePersonListItem";
 import SmallProductListItem from "./components/products/SmallProductListItem";
 import NumberedList from "./components/NumberedList";
 import LargeProductListItem from "./components/products/LargeProductListItem";
+import Modal from "./components/Modal";
 
 const App = () => {
     return (
         <>
+            <Modal>
+                <LargeProductListItem product={products[0]} />
+            </Modal>
+
+
             <RegularList
                 items={people}
                 resourceName="person"
