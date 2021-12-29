@@ -14,15 +14,21 @@ const getServerData = async () => {
     return response.data;
 }
 
+const getLocalStorage = key => () => {
+    return localStorage.getItem(key);
+}
+
+const Text = ({ message })  => <h1>{message}</h1>;
+
 const App = () => {
     return (
         <>
-            <DataSource resourceName="user" getDataFunc={getServerData}
-            >
-                <UserInfo />
+            {/*<DataSource resourceName="user" getDataFunc={getServerData} >*/}
+            {/*    <UserInfo />*/}
+            {/*</DataSource>*/}
+            <DataSource getDataFunc={getLocalStorage('message')} resourceName="message">
+                <Text />
             </DataSource>
-
-
            {/*<ResourceLoader resourceUrl={getSingleUserUrl} resourceName="user">*/}
            {/*     <UserInfo />*/}
            {/*</ResourceLoader>*/}
