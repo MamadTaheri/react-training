@@ -1,21 +1,35 @@
-import React, {useState} from 'react';
-import ControlledModal from "./components/ControlledVSUncontrolled/ControlledModal";
+import React from 'react';
+import UncontrolledOnboardingFlow from "./components/ControlledVSUncontrolled/UncontrolledOnboardingFlow";
+
+const StepOne = ({ goToNext }) => (
+    <>
+        <h1>Step 1</h1>
+        <button onClick={goToNext}>next</button>
+    </>
+);
+
+const StepTwo = ({ goToNext }) => (
+    <>
+        <h1>Step 2</h1>
+        <button onClick={goToNext}>next</button>
+    </>
+);
+const StepThree = ({ goToNext }) => (
+    <>
+        <h1>Step 3</h1>
+        <button onClick={goToNext}>next</button>
+    </>
+);
 
 const App = () => {
-    const [shouldShowModal, setShouldShowModal] = useState(false);
-
     return (
-        <>
-            <ControlledModal
-                shouldShow={shouldShowModal}
-                onRequestClose={() => setShouldShowModal(false)} >
-                <h1>Salam be hame</h1>
-                <p>How Are you?</p>
-            </ControlledModal>
-            <button onClick={() => setShouldShowModal(!shouldShowModal)}>
-                {shouldShowModal ? 'Hide Modal' : 'Show modal'}
-            </button>
-        </>
+        <div>
+            <UncontrolledOnboardingFlow>
+                <StepOne />
+                <StepTwo />
+                <StepThree />
+            </UncontrolledOnboardingFlow>
+        </div>
     );
 };
 
