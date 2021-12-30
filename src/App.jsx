@@ -1,14 +1,12 @@
 import React from 'react';
-import UncontrolledForm from "./components/ControlledVSUncontrolled/UncontrolledForm";
-import ControlledForm from "./components/ControlledVSUncontrolled/ControlledForm";
+import UncontrolledModal from "./components/ControlledVSUncontrolled/UncontrolledModal";
 
 const App = () => {
     return (
-        <div>
-            {/*<UncontrolledForm />*/}
-            {/*<h3>____________________________________________________________________________</h3>*/}
-            <ControlledForm />
-        </div>
+        <>
+            <UncontrolledModal />
+            <button>Show Modal</button>
+        </>
     );
 };
 
