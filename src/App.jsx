@@ -5,7 +5,13 @@ import UserInfo from "./components/people/UserInfo";
 
 const App = () => {
     return (
-        <UserInfo />
+        <>
+            <UserInfo userId="123" />
+            <h1>------------------------------</h1>
+            <UserInfo userId="234" />
+            <h1>------------------------------</h1>
+            <UserInfo userId="345" />
+        </>
     );
 };
 

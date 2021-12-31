@@ -1,7 +1,9 @@
 import {useCurrentUser} from "../Custom hooks/useCurrentUser";
+import {useUser} from "../Custom hooks/useUser";
 
-const UserInfo = () => {
-    const user = useCurrentUser();
+const UserInfo = ({ userId }) => {
+    // const user = useCurrentUser();
+    const user = useUser(userId);
     const { name, age, hairColor, hobbies } = user || {};
 
     return user ? (
