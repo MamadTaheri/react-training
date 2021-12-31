@@ -1,9 +1,13 @@
 import {useCurrentUser} from "../Custom hooks/useCurrentUser";
 import {useUser} from "../Custom hooks/useUser";
+import {useResource} from "../Custom hooks/useResource";
+import urls from "../../data/urls";
 
 const UserInfo = ({ userId }) => {
     // const user = useCurrentUser();
-    const user = useUser(userId);
+    // const user = useUser(userId);
+    const user = useResource(`${urls.users}/${userId}`)
+
     const { name, age, hairColor, hobbies } = user || {};
 
     return user ? (

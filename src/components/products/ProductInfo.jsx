@@ -1,4 +1,8 @@
-const ProductInfo = ({ product}) => {
+import {useResource} from "../Custom hooks/useResource";
+import urls from "../../data/urls";
+
+const ProductInfo = ({ productId }) => {
+    const product = useResource(`${urls.products}/${productId}`)
     const { name, price, description, rating } = product || {};
 
     return product ? (
