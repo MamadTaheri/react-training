@@ -1,10 +1,14 @@
-# React Training App 
+# React design patterns
 
-This is a React project which is for my trining
-
-for Install new project: 
-use
-`npx create-react-app app-name`
-
+Design Patterns are effective solutions to common application development challenges.
  
- 
+
+## 01 - Layout Components
+The Idea of Layout Components:\
+Our components should'nt know where they're being displayed. 
+
+### Titr 3
+
+`command`
+
+newLine : => .\
