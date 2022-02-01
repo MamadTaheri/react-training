@@ -1,3 +1,3 @@
-export const increase = () => {
+export const increaseCounter = () => {
     return {type: "INCREASE"}
 }
