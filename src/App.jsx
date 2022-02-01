@@ -1,12 +1,16 @@
 import React from 'react';
-import {people} from './data/people'
+import Counter from "./components/Counter";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const App = () => {
-    console.table(people)
+
     return (
-        <div>
-            
-        </div>
+            <Provider store={store}>
+                <div style={{margin:"3rem"}}>
+                    <Counter />
+                </div>
+            </Provider>
     );
 };
 
