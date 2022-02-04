@@ -1,17 +1,37 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 class Product extends Component {
-    render() {
-        return (
-            <>
-             <span className='m-2 text-info'>product name</span>   
-             <span className='m-2 badge bg-primary'>2</span>   
-             <button className='m-2 btn btn-sm btn-success'>+</button>
-             <button className='m-2 btn btn-sm btn-warning'>-</button>
-             <button className='m-2 btn btn-sm btn-danger'>delete</button>
-            </>
-        );
+  count = 3;
+  list = ["item one", "item two", "item three"];
+  mappedList = this.list.map((item) => <li key={item}>{item}</li>);
+  render() {
+    return (
+      <>
+        {this.count ? (
+          <>
+            <span className="m-2 text-info">product name</span>
+            <span className="m-2 badge bg-primary">{this.format()}</span>
+            <span className="m-2 badge bg-secondary">
+              {this.count === 0 ? "zerooooo" : this.count}
+            </span>
+            <button className="m-2 btn btn-sm btn-success">+</button>
+            <button className="m-2 btn btn-sm btn-warning">-</button>
+            <button className="m-2 btn btn-sm btn-danger">delete</button>
+            <ul>{this.mappedList}</ul>
+            <span style={{border:"2px solid blue", borderRadius:"50%", padding:"8px"}}>Salam</span>
+          </>
+        ) : <p>Zero found</p>}
+      </>
+    );
+  }
+
+  format() {
+    if (this.count == 0) {
+      return "Zero";
+    } else {
+      return this.count;
     }
+  }
 }
 
 export default Product;
