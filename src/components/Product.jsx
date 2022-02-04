@@ -14,9 +14,9 @@ class Product extends Component {
             <span className="m-2 badge bg-secondary">
               {this.count === 0 ? "zerooooo" : this.count}
             </span>
-            <button className="m-2 btn btn-sm btn-success">+</button>
-            <button className="m-2 btn btn-sm btn-warning">-</button>
-            <button className="m-2 btn btn-sm btn-danger">delete</button>
+            <button onClick={this.handleIncrement.bind(this)} className="m-2 btn btn-sm btn-success">+</button>
+            <button onClick={this.handleDecrement} className="m-2 btn btn-sm btn-warning">-</button>
+            <button onClick={() => this.handleDelete(56)} className="m-2 btn btn-sm btn-danger">delete</button>
             <ul>{this.mappedList}</ul>
             <span style={{border:"2px solid blue", borderRadius:"50%", padding:"8px"}}>Salam</span>
           </>
@@ -24,6 +24,19 @@ class Product extends Component {
       </>
     );
   }
+
+  handleIncrement(){
+      console.log('increment', this)
+  }
+  
+  handleDecrement = () => {
+      console.log('decrement', this)
+  }
+  
+  handleDelete(itemnumber){
+      console.log(itemnumber)
+  }
+  
 
   format() {
     if (this.count == 0) {
