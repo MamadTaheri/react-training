@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Product = ({productName, countNo, children}) => {
-
-    const [count, setCount] = useState(countNo);
+const Product = ({productName, countNo, id, onDelete, onIncrement, onDecrement}) => {
 
     return (
         <div>
@@ -12,28 +10,27 @@ const Product = ({productName, countNo, children}) => {
           <button onClick={handleIncrement} className="m-2 btn btn-sm btn-success">+</button>
           <button onClick={handleDecrement} className="m-2 btn btn-sm btn-warning">-</button>
           <button onClick={() => handleDelete(56)} className="m-2 btn btn-sm btn-danger">delete</button>
-          {children}
         </div>
       );
 
     function handleIncrement(){
-        setCount(count + 1)
+      onIncrement(id)
     }
     
     function handleDecrement() {
-        setCount(count - 1)
+        onDecrement(id)
     }
     
     function handleDelete(itemnumber){
-        console.log(itemnumber)
+        onDelete(id);
     }
     
   
     function format(){
-      if (count === 0) {
+      if (countNo === 0) {
         return "Zero";
       } else {
-        return count;
+        return countNo;
       }
     }
 };

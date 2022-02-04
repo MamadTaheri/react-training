@@ -12,13 +12,47 @@ class Products extends Component {
     render() {
         return (
             <>
+            <button onClick={this.handleReset} className='btn btn-primary'>Reset</button>
                 {this.state.products.map((p, index) => (
-                    <Product key={index} productName={p.productName} countNo={p.count}>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, beatae.</span>
-                    </Product>
+                    <Product 
+                        key={index} 
+                        productName={p.productName} 
+                        countNo={p.count} 
+                        id={p.id} 
+                        onDelete={this.handleDelete} 
+                        onIncrement={this.handleIncrement}
+                        onDecrement={this.handleDecrement}
+                    />
                 ))}
             </>
         );
+    }
+
+    handleDelete = (productId) => {
+        const filteredState = this.state.products.filter(q => q.id !== productId);
+        this.setState({products: filteredState})
+    }
+
+    handleIncrement = (productId) => {
+        const updatedState = [...this.state.products];
+        const index = updatedState.findIndex(q => q.id === productId);
+        updatedState[index].count +=1 ;
+        this.setState({products: updatedState});
+    }
+
+    handleDecrement = (productId) => {
+        const updatedState = [...this.state.products];
+        const index = updatedState.findIndex(q => q.id === productId);
+        updatedState[index].count -=1 ;
+        this.setState({products: updatedState});
+    }
+
+    handleReset = () => {
+        const updatedState = this.state.products.map(q => {
+            q.count = 0;
+            return q;
+        })
+        this.setState({products: updatedState});
     }
 }
 
