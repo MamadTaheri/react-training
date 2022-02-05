@@ -1,10 +1,17 @@
 import React from 'react';
-import { useState, useContext } from 'react';
+import { useEffect } from 'react';
+import { useContext } from 'react';
 import ProductContext from '../../context/Products';
 
 const Product = ({productName, countNo, id}) => {
     const productContext = useContext(ProductContext);
-    console.log(productContext)
+    console.log("Product - render");
+    useEffect(() => {
+        console.log("Product - useEffect");
+        return () => {
+          console.log("Product - Unmount")
+        }
+    }, [])
     return (
         <div>
           <span className="m-2 text-info">{productName}</span>

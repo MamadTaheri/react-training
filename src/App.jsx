@@ -3,7 +3,16 @@ import Navbar from "./components/class/Navbar";
 import Products from "./components/Products";
 import ProductContext from "./context/Products";
 class App extends Component {
-
+    constructor(props){
+        super(props);
+        console.log("App - constructor");
+    }
+    componentDidMount(){
+        console.log("App - componentDidMount");
+    }
+    componentDidUpdate(){
+        console.log("App - componentDidUpdate");
+    }
     state = {
         products:[
             {id:1, count: 2, productName: 'laptop'},
@@ -13,6 +22,7 @@ class App extends Component {
     }
 
     render() {
+        console.log("App - render");
         return (
             <>
                 <ProductContext.Provider 
@@ -22,8 +32,7 @@ class App extends Component {
                         onIncrement :this.handleIncrement,
                         onDecrement :this.handleDecrement,
                         onReset :this.handleReset,
-                    }}
-                >
+                    }}>
                 <Navbar />
                 <Products  />
                 </ProductContext.Provider>

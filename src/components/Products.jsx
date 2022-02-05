@@ -5,7 +5,11 @@ import ProductContext from "./../context/Products";
 
 class Products extends Component {
     static contextType = ProductContext;
+    componentDidUpdate(){
+        console.log("Products - componentDidUpdate");
+    }
     render() {
+        console.log("Products - render");
         return (
             <>
             <button onClick={this.context.onReset} className='btn btn-primary'>Reset</button>

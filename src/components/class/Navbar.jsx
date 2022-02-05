@@ -3,13 +3,17 @@ import ProductContext from "../../context/Products";
 
 class Navbar extends Component {
     static contextType = ProductContext;
+    componentDidUpdate(){
+        console.log("Navbar - componentDidUpdate");
+    }
     render() {
+        console.log("Navbar - render");
         return (
            <nav className='navbar navbar-light bg-light'>
                <div className='container-fluid'>
-                   <a href="#" className='navbar-brand'>
+                   <span className='navbar-brand'>
                        Navbar {this.calculateSum()}
-                   </a>
+                   </span>
                </div>
            </nav>
         );
