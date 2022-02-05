@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import ProductContext from "../../context/Products";
 
 class Navbar extends Component {
+    static contextType = ProductContext;
     render() {
         return (
            <nav className='navbar navbar-light bg-light'>
@@ -14,7 +16,7 @@ class Navbar extends Component {
     }
     calculateSum = () => {
         let sum = 0;
-        this.props.products.forEach(q => {
+        this.context.products.forEach(q => {
             sum += q.count;
         });
         return sum;

@@ -1,8 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import ProductContext from '../../context/Products';
 
-const Product = ({productName, countNo, id, onDelete, onIncrement, onDecrement}) => {
-
+const Product = ({productName, countNo, id}) => {
+    const productContext = useContext(ProductContext);
+    console.log(productContext)
     return (
         <div>
           <span className="m-2 text-info">{productName}</span>
@@ -14,15 +16,15 @@ const Product = ({productName, countNo, id, onDelete, onIncrement, onDecrement})
       );
 
     function handleIncrement(){
-      onIncrement(id)
+      productContext.onIncrement(id)
     }
     
     function handleDecrement() {
-        onDecrement(id)
+      productContext.onDecrement(id)
     }
     
     function handleDelete(itemnumber){
-        onDelete(id);
+      productContext.onDelete(id);
     }
     
   
