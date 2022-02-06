@@ -24,6 +24,7 @@ const User = (props) => {
         <h4>  {user.first_name} {user.last_name} </h4>
       </Link>
       <h5>{user.email}</h5>
+      <button onClick={() => {props.history.push('/users')}} className="btn btn-info mt-3">Users</button>
     </>
   );
 };
