@@ -4,9 +4,9 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const LoadingUsers = () => {
     return (
-        Array(6).fill({}).map(() => {
+        Array(6).fill({}).map((q,i) => {
             return (
-                <div className="col-4 text-center p-5">
+                <div key={i} className="col-4 text-center p-5">
                     <Skeleton className='mb-4' circle={true} height={100} width={100} />
                     <Skeleton className='mb-2' height={30} count={2} />
                 </div>
