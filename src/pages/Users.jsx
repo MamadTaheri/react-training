@@ -65,7 +65,7 @@ class Users extends Component {
             email: 'm@tmail.com',
             avatar: 'https://i.guim.co.uk/img/media/1f8dc870561aa4f29e660b8481463d83c23f82e4/204_0_1236_742/master/1236.jpg?width=1020&quality=45&auto=format&fit=max&dpr=2&s=eb3e4526230f6bd387937f79e9388b10'
         }
-        const response = await axios.post(this.baseURL, newUser);
+        await axios.post(this.baseURL, newUser);
         this.setState({users: [...this.state.users, newUser]});
     }
 
