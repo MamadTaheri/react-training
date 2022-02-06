@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import LoadingUsers from './loading/LoadingUsers';
+import { Link } from 'react-router-dom';
+import LoadingUsers from '../components/loading/LoadingUsers';
 
 class Users extends Component {
 
@@ -25,7 +26,7 @@ class Users extends Component {
         return (
             <>
                <button onClick={this.handleCreate} className='btn btn-lg btn-primary'>create</button>
-                <div className="container">
+                <div className="container mt-3">
                 <div className="row">
                   {
                     this.state.isLoading ? (
@@ -34,7 +35,9 @@ class Users extends Component {
                         this.state.users.map(user => (
                                 <div key={user.id} className="col-4 text-center">
                                     <img src={user.avatar} style={{borderRadius: "50%", width: '100px'}} alt="" />
-                                    <h4>{user.first_name} {user.last_name}</h4>
+                                    <Link to={`/users/${user.id}`}>
+                                        <h4>{user.first_name} {user.last_name}</h4>
+                                    </Link>
                                     <h5>{user.email}</h5>
                                     <div className="row">
                                         <div className="col-6">
