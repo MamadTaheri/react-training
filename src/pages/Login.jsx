@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import Input from '../components/Input';
 
 class Login extends Component {
 
@@ -26,16 +27,8 @@ class Login extends Component {
         const {email, password} = this.state.account;
         return (
             <form onSubmit={this.handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor='email'>Email:</label>
-                    <input onChange={this.handleChange} id='email' name='email' 
-                        className='form-control' type="text" value={email} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor='password'>Password:</label>
-                    <input onChange={this.handleChange} id='password' name='password' 
-                        className='form-control' type="text" value={password}/>
-                </div>
+                <Input name='email' value={email} label='Email' onChange={this.handleChange} />
+                <Input name='password' value={password} label='Password' onChange={this.handleChange} />
                 <button className='btn btn-primary'>Login</button>
             </form>
         );
