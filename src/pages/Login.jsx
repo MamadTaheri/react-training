@@ -1,36 +1,40 @@
 import axios from 'axios';
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 
 class Login extends Component {
-    email = createRef();
-    password = createRef();
-   
+
     baseURL = "https://reqres.in/api/users";
 
-    handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log({email: this.email.current.value});
-        console.log({password: this.password.current.value});
-        const account = {
-            email: this.email.current.value,
-            password: this.password.current.value
-        }
-        if(account.email && account.password) {
-            const response = await axios.post(this.baseURL, account);
-            console.log(response);
+    state = {
+        account: {
+            email: '',
+            password: ''
         }
     }
 
+    handleSubmit = async (e) => {
+        e.preventDefault();
+    }
+
+    handleChange = ({currentTarget: input}) => {
+        const account = {...this.state.account};
+        account[input.name] = input.value;
+        this.setState({account});
+    }
+
     render() {
+        const {email, password} = this.state.account;
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor='email'>Email:</label>
-                    <input ref={this.email} id='email' className='form-control' type="text" />
+                    <input onChange={this.handleChange} id='email' name='email' 
+                        className='form-control' type="text" value={email} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor='password'>Password:</label>
-                    <input ref={this.password} id='password' className='form-control' type="text" />
+                    <input onChange={this.handleChange} id='password' name='password' 
+                        className='form-control' type="text" value={password}/>
                 </div>
                 <button className='btn btn-primary'>Login</button>
             </form>
