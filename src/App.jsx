@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import Logout from './pages/Logout';
 
 
 const App = () => {
@@ -41,12 +42,13 @@ const App = () => {
     }, [])
     return (
         <>
-            <Navbar />
+            <Navbar user={user} />
             <div className="container">
                 <Switch>
                     <Route path='/users/:id' component={User} exact/>
                     <Route path='/users' render={(props) => <Users {...props} />} exact/>
-                    <Route path='/login' component={Login} exact/>
+                    <Route path='/login' component={Login} />
+                    <Route path='/logout' component={Logout} />
                     <Route path='/register' component={Register} />
                     <Route path='/dashboard' component={Dashboard} />
                     <Redirect from='/customers' to='/users' />

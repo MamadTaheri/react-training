@@ -42,7 +42,7 @@ class Login extends Component {
                 const response = await axios.post(this.baseLoginURL, result);
                 localStorage.setItem('token', response.data.token);
                 this.setState({sending: false})
-                this.props.history.replace('/dashboard');
+                window.location= "/dashboard";
             } catch (error) {
                 this.setState({sending: false})
                 this.setState({errors: ['ایمیل یا پسورد صحیح نمی باشد']})

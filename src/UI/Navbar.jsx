@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,12 +16,27 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to="/users">Users</NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">Login</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/register">register</NavLink>
-              </li>
+              {
+                !props.user ? (
+                  <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/login">Login</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/register">register</NavLink>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/logout">Logout</NavLink>
+                    </li>
+                  </>
+                )
+              }
             </ul>
           </div>
         </div>
