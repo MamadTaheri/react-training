@@ -16,7 +16,7 @@ import axios from 'axios';
 const App = () => {
     const [user, setUser] = useState(null);
 
-    baseTokenURL = "https://reqres.in/api/userbytoken";
+    const baseTokenURL = "https://reqres.in/api/userbytoken";
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -24,7 +24,7 @@ const App = () => {
             setUser(null);
             return;
         }
-        // axios.post(baseTokenURL, {token});
+        // await axios.post(baseTokenURL, {token});
         const response = {
             data: {
                 user: {
