@@ -57,9 +57,6 @@ const App = () => {
                     <Redirect to="/not-found" />
                 </Switch>
             </div>
-
-
-
         </>
     );
 };
