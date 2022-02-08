@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import Logout from './pages/Logout';
+import Protect from './components/Protect';
 
 
 const App = () => {
@@ -50,7 +51,7 @@ const App = () => {
                     <Route path='/login' component={Login} />
                     <Route path='/logout' component={Logout} />
                     <Route path='/register' component={Register} />
-                    <Route path='/dashboard' component={Dashboard} />
+                    <Protect path='/dashboard' component={Dashboard} />
                     <Redirect from='/customers' to='/users' />
                     <Route path='/not-found' component={NotFound}/>
                     <Route path='/' component={Home} exact/>
