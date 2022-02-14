@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import MyAppBar from "./components/MyAppBar";
+import Tour from "./pages/Tour";
 
 const App = () => {
 
@@ -9,6 +10,7 @@ const App = () => {
       <MyAppBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<Tour />} />
       </Routes>
     </BrowserRouter>
   );
