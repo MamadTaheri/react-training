@@ -2,19 +2,61 @@ import Paper from '@mui/material/Paper';
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import img1 from "../images/img1.jpg"
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import Rating from '@mui/material/Rating';
+import { createTheme, ThemeProvider } from '@mui/material';
+import img1 from "../images/img1.jpg";
 
-const TourCard = (props) => {
+const theme = createTheme({
+    components: {
+        MuiTypography:{
+            variants: [
+                {
+                    props: {
+                        variant: "body2"
+                    },
+                    style: {
+                        fontSize: 11,
+                    }
+                }
+            ]
+        }
+    }
+})
+
+const TourCard = ({tour}) => {
     return (
         <Grid item xs={3}>
-            <Paper elevation={3} >
-                <img src={img1} alt="img1" className="img" />
-                <Box paddingX={1}>
-                    <Typography variant="subtitle1" component="h2">
-                        Immerse into the Falls
-                    </Typography>
-                </Box>
-            </Paper>
+            <ThemeProvider theme={theme}>
+                <Paper elevation={3} >
+                    <img src={tour.image} alt="img" className="img" />
+                    <Box paddingX={1}>
+                        <Typography variant="subtitle1" component="h2">
+                            {tour.name}
+                        </Typography>
+                        <Box sx={{ display: "flex", alignItems: "center" }} >
+                            <AccessTimeIcon sx={{width: 12.5}} />
+                            <Typography variant="body2" component="p" marginLeft={0.5}>
+                                {tour.duration} hours
+                            </Typography>
+                        </Box>
+                        <Box sx={{ display: "flex", alignItems: "center" }} marginTop={3}>
+                            <Rating name="read-only" value={tour.rating} precision={0.25} size="small" readOnly />
+                            <Typography variant="body2" component="p" marginLeft={0.5}>
+                                {tour.rating}
+                            </Typography>
+                            <Typography variant="body2" component="p" marginLeft={1.5}>
+                                ({tour.numberOfReviews} reviews)
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="h6" component="h3" marginTop={0}>
+                                From C ${tour.price}
+                            </Typography> 
+                        </Box>
+                    </Box>
+                </Paper>
+            </ThemeProvider>
         </Grid>
     );
 };
