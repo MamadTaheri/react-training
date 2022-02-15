@@ -1,25 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { increaseCounter } from "../redux/counter/counterAction"
 const Counter = (props) => {
+    const counter = useSelector(state => state.counter)
+    const dispatch = useDispatch();
     return (
         <div>
-            <h1>Counter - {props.counter}</h1>
-            <button className='btn btn-primary' onClick={props.increaseCounter}>Increase</button>
+            <h1>Counter - {counter}</h1>
+            <button className='btn btn-primary' onClick={() => dispatch(increaseCounter())}>Increase</button>
         </div>
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        counter: state.counter
-    }
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        increaseCounter: () => dispatch(increaseCounter())
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Counter);
+export default Counter;
