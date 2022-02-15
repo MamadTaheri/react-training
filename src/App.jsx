@@ -3,6 +3,7 @@ import Counter from './components/Counter';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Number from './components/Number';
+import Users from './components/Users';
 
 const App = () => {
   return (
@@ -11,6 +12,8 @@ const App = () => {
         <Counter />
         <p>---------------------------------------------------------</p>
         <Number />
+        <p>---------------------------------------------------------</p>
+        <Users />
       </div>
     </Provider>
   );
