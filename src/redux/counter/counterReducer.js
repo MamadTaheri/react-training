@@ -9,12 +9,12 @@ const counterReducer = (state = initialState, action) => {
         case actionConstants.INCREASE_COUNTER:
             return {
                 ...state,
-                counter: state.counter + 1
+                counter: state.counter + action.payload
             }
         case actionConstants.DECREASE_COUNTER:
             return {
                 ...state,
-                counter: state.counter - 1
+                counter: state.counter - action.payload
             }
         default:
             return state;

@@ -1,13 +1,15 @@
 import { actionConstants } from "../actionConstants"
 
-const increaseCounter = () => {
+const increaseCounter = (value = 1) => {
     return {
-        type: actionConstants.INCREASE_COUNTER
+        type: actionConstants.INCREASE_COUNTER,
+        payload: value
     }
 }
-const decreaseCounter = () => {
+const decreaseCounter = (value = 1) => {
     return {
-        type: actionConstants.DECREASE_COUNTER
+        type: actionConstants.DECREASE_COUNTER,
+        payload: value
     }
 }
 
