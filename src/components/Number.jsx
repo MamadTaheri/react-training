@@ -1,21 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increaseCounter, decreaseCounter } from "../redux/counter/counterAction"
-const Counter = () => {
-    const counter = useSelector(state => state.counterState.counter)
+import { increaseNumber, decreaseNumber } from "../redux/number/numberAction"
+const Number = () => {
+    const number = useSelector(state => state.numberState.number)
     const dispatch = useDispatch();
     return (
         <div>
-            <h1>Counter : {counter}</h1>
+            <h1>Number : {number}</h1>
             <button 
                 className='btn btn-primary' 
-                onClick={() => dispatch(increaseCounter())}
+                onClick={() => dispatch(increaseNumber())}
             >
                 Increase
             </button>
             <button 
                 className='btn btn-danger' 
-                onClick={() => dispatch(decreaseCounter())}
+                onClick={() => dispatch(decreaseNumber())}
             >
                 Decrease
             </button>
@@ -24,4 +24,4 @@ const Counter = () => {
 };
 
 
-export default Counter;
+export default Number;
