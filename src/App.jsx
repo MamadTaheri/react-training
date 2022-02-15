@@ -1,17 +1,12 @@
 import React from 'react';
-import Counter from "./components/Counter";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import UserForm from './components/UserForm';
 
 const App = () => {
-
-    return (
-            <Provider store={store}>
-                <div style={{margin:"3rem"}}>
-                    <Counter />
-                </div>
-            </Provider>
-    );
+  return (
+    <div style={{textAlign: "center"}}>
+     <UserForm /> 
+    </div>
+  );
 };
 
 export default App;

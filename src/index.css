@@ -1,4 +1,6 @@
 * {
     padding: 0;
-    margin: ;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Tahoma, serif ;
 }
