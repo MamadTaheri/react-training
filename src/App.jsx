@@ -1,9 +1,10 @@
 import React from 'react';
+import UserForm from './components/UserForm';
 
 const App = () => {
   return (
-    <div>
-      
+    <div style={{textAlign: "center"}}>
+     <UserForm /> 
     </div>
   );
 };
