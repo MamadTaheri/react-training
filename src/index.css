@@ -4,20 +4,3 @@
     box-sizing: border-box;
     font-family: "Roboto", Tahoma, serif ;
 }
-
-.container {
-    margin: 10px 20px;
-  }
-  
-  input {
-    margin: 8px 0;
-  }
-  
-  label {
-    font-weight: 700;
-  }
-  
-  .title {
-    margin-top: 10px;
-  }
-  
