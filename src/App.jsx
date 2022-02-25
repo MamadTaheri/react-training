@@ -1,16 +1,10 @@
-import React from 'react';
-import people from "./data/people.json";
+import "./index.css";
+import React from "react";
 
-const App = () => {
-  
- 
-  console.log(people);
-  
+export default function App() {
   return (
     <div>
-      
+      <h1 className="title">Hi there!</h1>
     </div>
   );
-};
-
-export default App;
+}
