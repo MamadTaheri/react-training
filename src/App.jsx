@@ -1,8 +1,5 @@
 import { useState } from "react";
-import Dropdown from "./components/Dropdown";
-// import Accordion from './components/Accordion';
-// import Search from './components/Search';
-// import items from "./data/items";
+import Translate from "./components/Translate";
 import options from "./data/options";
 
 const App = () => {
@@ -10,13 +7,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <Accordion items={items} /> */}
-      {/* <Search /> */}
-      <Dropdown
-        selected={selected}
-        onSelectedChanged={setSelected}
-        options={options}
-      />
+        <Translate />
     </div>
   );
 };
