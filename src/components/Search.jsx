@@ -30,6 +30,11 @@ const Search = () => {
     const renderedResult = results.map(result => {
         return (
             <div key={result.pageid} className="item">
+                <div className="right floated content">
+                    <a className='ui button' href={`https://en.wikipedia.org?curid=${result.pageid}`}>
+                        Go
+                    </a>
+                </div>
                 <div className="content">
                     <div className="header">
                         {result.title}
@@ -43,7 +48,7 @@ const Search = () => {
     });
 
     return (
-        <h1>
+        <div className='ui container'>
            <div className="ui form">
                <div className="field">
                    <label>Enter search term</label>
@@ -53,7 +58,7 @@ const Search = () => {
            <div className="ui list">
                {renderedResult}
            </div>
-        </h1>
+        </div>
     );
 };
 
