@@ -1,7 +1,7 @@
 import React from 'react';
-import Accordion from './components/Accordion';
+// import Accordion from './components/Accordion';
 import Search from './components/Search';
-import items from "./data/items"
+// import items from "./data/items"
 
 
 const App = () => {
