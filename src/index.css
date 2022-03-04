@@ -4,3 +4,8 @@
     box-sizing: border-box;
     font-family: "Roboto", Tahoma, serif ;
 }
+
+.custom-dd-label{
+   color: white;
+   padding: 1rem ;
+}
