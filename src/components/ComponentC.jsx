@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const ComponentC = ({ name }) => {
+import { NameContext,AgeContext } from '../App';
+
+const ComponentC = () => {
+
+    const name = useContext(NameContext);
+    const age = useContext(AgeContext);
+
     return (
         <div style={{border:"1px solid black", margin: "2rem", padding: "2rem"}}>
-            ComponentC --- name is : {name}
+            ComponentC :
+            <br />
+             name is : {name}
+             <br />
+             age is : {age}
+
         </div>
     );
 };
