@@ -1,16 +1,9 @@
-import { actionConstants } from "../actionConstants"
+import ActionTypes from "../ActionTypes";
 
-const increaseCounter = (value = 1) => {
+const increaseCounter = () => {
     return {
-        type: actionConstants.INCREASE_COUNTER,
-        payload: value
-    }
-}
-const decreaseCounter = (value = 1) => {
-    return {
-        type: actionConstants.DECREASE_COUNTER,
-        payload: value
+        type: ActionTypes.increaseCounter
     }
 }
 
-export { increaseCounter, decreaseCounter };
+export {increaseCounter};
