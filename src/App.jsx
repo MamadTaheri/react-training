@@ -1,4 +1,5 @@
 import Counter from './components/Counter';
+import Counter2 from './components/Counter2';
 
 const App = () => {
 
@@ -6,6 +7,8 @@ const App = () => {
   return (
     <div>
       <Counter />
+      <hr />
+      <Counter2 />
     </div>
   );
 };
