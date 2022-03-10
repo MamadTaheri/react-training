@@ -1,32 +1,26 @@
-import { useMemo, useState } from "react";
+import React, { useState, useCallback } from 'react';
+import ComponentA from './components/ComponentA';
+import ComponentB from './components/ComponentB';
 
 const App = () => {
-  const [isShown, setIsShown] = useState(true);
-  const [number , setNumber] = useState(0);
 
-  const slow = useMemo(() => {
-    for (let i = 0; i <1000000000; i++) {}
-    return isShown;
-  }, [isShown])
+  const [valueA, setValueA] = useState("A");
+  const [valueB, setValueB] = useState("B");
 
-  const showHandler = () => {
-    setIsShown(!isShown);
-  }
+  const changeHandlerA = useCallback(() => {
+    setValueA(valueA => valueA += "A");
+  }, []);
+  
+  const changeHandlerB = useCallback(() => {
+    setValueB(valueB => valueB += "B")
+  }, []);
 
-  const numberHandler = () => {
-    setNumber(prevNumber => prevNumber + 1);
-  }
-
-  console.log(number)
+  console.log("********************************App rendered********************************");
 
   return (
-    <div className="container text-center">
-      <button className="btn btn-primary" onClick={showHandler}>show-hide</button>
-      <span>{slow ? "Show" : "Hide"}</span>
-      <br />
-      <br />
-      <button className="btn btn-info" onClick={numberHandler}>+</button>
-      <span>{number}</span>
+    <div className='container border border-primary text-center'>
+      <ComponentA value={valueA} changeHandler={changeHandlerA} />
+      <ComponentB value={valueB} changeHandler={changeHandlerB}  />
     </div>
   );
 };
