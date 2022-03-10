@@ -1,26 +1,24 @@
-import React, { useState, useCallback } from 'react';
-import ComponentA from './components/ComponentA';
-import ComponentB from './components/ComponentB';
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 const App = () => {
+  const inputRef = useRef(null);
 
-  const [valueA, setValueA] = useState("A");
-  const [valueB, setValueB] = useState("B");
+  console.log("Render");
+  console.log(inputRef);
 
-  const changeHandlerA = useCallback(() => {
-    setValueA(valueA => valueA += "A");
-  }, []);
-  
-  const changeHandlerB = useCallback(() => {
-    setValueB(valueB => valueB += "B")
+  useLayoutEffect(() => {
+    console.log("useLayoutEffect");
+    console.log(inputRef);
   }, []);
 
-  console.log("********************************App rendered********************************");
+  useEffect(() => {
+    console.log("useEffect");
+    console.log(inputRef);
+  }, []);
 
   return (
-    <div className='container border border-primary text-center'>
-      <ComponentA value={valueA} changeHandler={changeHandlerA} />
-      <ComponentB value={valueB} changeHandler={changeHandlerB}  />
+    <div>
+      <input type="text" ref={inputRef} />
     </div>
   );
 };
