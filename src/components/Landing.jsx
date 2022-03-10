@@ -1,6 +1,9 @@
 import React, { useEffect, useLayoutEffect } from "react";
+import useTitle from "../hooks/useTitle";
 
 const Landing = () => {
+
+    useTitle("Landing Page");
 
     console.log("Landing rendered")
 
