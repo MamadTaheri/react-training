@@ -1,14 +1,17 @@
-import React from 'react';
-import useLocalStorage from './hooks/useLocalStorage';
+import React from "react";
+import Counter from "./components/Counter";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const App = () => {
 
-  const [name, setName] = useLocalStorage("name", "");
-
   return (
-    <div>
-      <input type="text" value={name} onChange={e => setName(e.target.value)} />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Counter />
+      </div>
+    </Provider>
+ 
   );
 };
 
