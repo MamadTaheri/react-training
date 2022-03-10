@@ -8,7 +8,7 @@ const App = () => {
     <div>
       <Counter />
       <hr />
-      <Counter2 />
+      {/* <Counter2 /> */}
     </div>
   );
 };
