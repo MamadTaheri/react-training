@@ -3,7 +3,8 @@ import React from "react";
 // import UseEffectComponent from "./components/02-useEffect/UseEffectComponent";
 // import UseReducerComponent01 from "./components/04-useReducer/UseReducerComponent01";
 // import UseReducerComponent02 from "./components/04-useReducer/UseReducerComponent02";
-import UseRefComponent from "./components/07-useRef/UseRefComponent";
+// import UseRefComponent from "./components/07-useRef/UseRefComponent";
+import UseLayoutEffectComponent from "./components/09-useLayoutEffect/UseLayoutEffectComponent";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
         {/* <UseReducerComponent01 /> */}
         {/* <UseReducerComponent02 /> */}
         {/* <UseEffectComponent /> */}
-        <UseRefComponent />
+        {/* <UseRefComponent /> */}
+        <UseLayoutEffectComponent />
       </div>
     </div>
   );
