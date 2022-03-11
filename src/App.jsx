@@ -1,10 +1,13 @@
-import UseImperativeHandleComponents from "./components/08-useImperativeHandle/UseImperativeHandleComponents";
+import UseContextComponent from "./components/03-useContext/002_with-context/UseContextComponent";
+
+ 
 
 const App = () => {
   return (
     <div className="container text-center border border-primary rounded p-2 ">
       <div className="row">
-        <UseImperativeHandleComponents />
+        <UseContextComponent />
+        <hr />
       </div>
     </div>
   );
