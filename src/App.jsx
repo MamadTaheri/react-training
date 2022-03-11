@@ -1,14 +1,12 @@
-import UseMemoComponent from "./components/06-useMemo/UseMemoComponent";
-import UseMemoComponent2 from "./components/06-useMemo/UseMemoComponent2";
+import UseCallBackComponent from "./components/05-useCallback/example01/UseCallBackComponent";
+
+ 
 
 const App = () => {
   return (
     <div className="container text-center border border-primary rounded p-2 ">
       <div className="row">
-        <UseMemoComponent />
-        <hr />
-        <hr />
-        <UseMemoComponent2 />
+        <UseCallBackComponent />
       </div>
     </div>
   );
