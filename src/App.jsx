@@ -1,18 +1,10 @@
-import Home from "./pages/Home";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import MyAppBar from "./components/MyAppBar";
-import Tour from "./pages/Tour";
+import React from 'react';
 
 const App = () => {
-
   return (
-    <BrowserRouter>
-      <MyAppBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<Tour />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      App
+    </div>
   );
 };
 
