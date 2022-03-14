@@ -1,0 +1,19 @@
+@import "../Variables/variables";
+
+.mainPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    h1 {
+        color: $redColor;
+    }
+
+    button {
+        @include buttonStyle($blackColor, 35px);
+    }
+}
+
+button {
+    @include buttonStyle(purple, 205px);
+}
