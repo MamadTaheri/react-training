@@ -11,7 +11,7 @@ const ProductDetails = ({addProduct}) => {
     const price = form.get("price");
 
     addProduct({id, productName, price});
-    alert('item succesfully added.');
+    // alert('item succesfully added.');
 
     event.target.reset();
 
@@ -19,7 +19,7 @@ const ProductDetails = ({addProduct}) => {
   return (
     <>
       <h1>Add New Product</h1>
-      <form onSubmit={(event) => save(event)}>
+      <form method="post" onSubmit={(event) => save(event)}>
         <div className="form-group">
           <label>Product Id:</label>
           <input type="number" className="form-control" name="productId" />
