@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./styles/index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Provider } from "react-redux";
 import store from "./stateManagement/store";
