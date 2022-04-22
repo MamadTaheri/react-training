@@ -4,7 +4,7 @@
 // remove
 // edit
 
-import {ProductAdd, ProductEdit, ProductGetAll, ProductGetById, ProductRemove} from './actionTypes';
+import {ProductAdd, ProductEdit, ProductGetById, ProductRemove} from './actionTypes';
 
 export const getAll = () => ({
     type: "PRODUCT_GET_ALL"   //??
