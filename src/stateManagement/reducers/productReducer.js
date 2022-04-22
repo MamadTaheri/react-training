@@ -10,7 +10,7 @@ const initialState = {
     { id: 2, productName: "Product B", price: 200 },
     { id: 3, productName: "Product C", price: 300 },
   ],
-  isLoading: true,
+  isLoading: false,
 };
 
 function productReducer(state = initialState, action) {

@@ -1,5 +1,6 @@
 import ProductDetails  from "./components/ProductDetails";
 import ProductList from "./components/ProductList";
+import ProductListWithThunk from "./components/ProductListWithThunk";
 
 const App = () => {
   return (
@@ -12,6 +13,11 @@ const App = () => {
         </div>
         <div className="col">
             <ProductDetails />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <ProductListWithThunk />
         </div>
       </div>
     </div>
