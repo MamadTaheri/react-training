@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { add } from "../stateManagement/actions/productActions";
+import {ThemeContext} from "../App"
 
-const ProductDetails = ({addProduct}) => {
+const ProductDetails = ({ addProduct }) => {
   const save = (event) => {
     event.preventDefault();
     const form = new FormData(event.target);
@@ -10,15 +11,16 @@ const ProductDetails = ({addProduct}) => {
     const productName = form.get("productName");
     const price = form.get("price");
 
-    addProduct({id, productName, price});
+    addProduct({ id, productName, price });
     // alert('item succesfully added.');
 
     event.target.reset();
-
   };
   return (
     <>
-      <h1>Add New Product</h1>
+      <ThemeContext.Consumer>
+        {(theme) => <h1 style={{ backgroundColor: theme }}>Add New Product</h1>}
+      </ThemeContext.Consumer>
       <form method="post" onSubmit={(event) => save(event)}>
         <div className="form-group">
           <label>Product Id:</label>
@@ -41,10 +43,10 @@ const ProductDetails = ({addProduct}) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addProduct: (item) => dispatch(add(item))
-    }
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addProduct: (item) => dispatch(add(item)),
+  };
+};
 
 export default connect(null, mapDispatchToProps)(ProductDetails);

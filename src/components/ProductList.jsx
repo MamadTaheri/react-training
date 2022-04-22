@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { remove } from "../stateManagement/actions/productActions";
 import { connect } from "react-redux";
+import { ThemeContext } from "../App";
 
 class ProductList extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Product List</h1>
+        <ThemeContext.Consumer>
+          {(theme) => <h1 style={{ backgroundColor: theme}}>Product List</h1>}
+        </ThemeContext.Consumer>
         <table className="table table-stripped table-border table-hover">
           <thead>
             <tr>

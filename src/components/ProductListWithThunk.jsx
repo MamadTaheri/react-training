@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getAllProducts } from "../stateManagement/actions/ProductThunkActions";
 import { connect } from "react-redux";
+import {ThemeContext} from "../App";
 
 class ProductListWithThunk extends Component {
   componentDidMount() {
@@ -9,7 +10,11 @@ class ProductListWithThunk extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Product List With Thunk</h1>
+        <ThemeContext.Consumer>
+          {(theme) => (
+            <h1 style={{ backgroundColor: theme }}>Product List With Thunk</h1>
+          )}
+        </ThemeContext.Consumer>
         {this.props.isLoading ? <div>Loading data from Server ...</div> : null}
         {this.props.message ? <div>{this.props.message}</div> : null}
         <table className="table table-stripped table-border table-hover">
