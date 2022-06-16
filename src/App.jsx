@@ -1,14 +1,9 @@
-import React from "react";
-import NeshanMapComponent from "./components/NeshanMapComponent";
+import React from 'react';
 
 const App = () => {
   return (
-    <div className="container">
-      <div className="alert alert-primary" role="alert">
-        This is App component
-      </div>
-      <hr />
-      <NeshanMapComponent />
+    <div>
+      
     </div>
   );
 };
