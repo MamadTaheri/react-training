@@ -1,11 +1,17 @@
-import React from 'react';
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import WebRoutes from "./pages/WebRoutes";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <WebRoutes />
+      </BrowserRouter>
+    </>
   );
-};
+}
 
 export default App;
