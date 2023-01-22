@@ -1,4 +1,6 @@
 ## React Hooks Mastery
+![GitHub last commit](https://img.shields.io/github/last-commit/MamadTaheri/react-training)
+
 Hooks are very usefull functions which can help us create react applications faster using functional component with power of class components.
 
 let's take a look on React Official document:
